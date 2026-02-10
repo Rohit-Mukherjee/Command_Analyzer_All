@@ -189,7 +189,55 @@ docker run -p 8501:8501 -v $(pwd):/app/data command-line-threat-analyzer
 Access the application at `http://localhost:8501`
 
 ## 📈 Usage
+
+### Web Application (Recommended)
+For the best user experience, run the full web application:
+
+1. **Start the web app:**
+   ```bash
+   streamlit run web_app.py
+   ```
+
+2. **Access the application** at `http://localhost:8501`
+
+3. **Upload your CSV file** with a 'commandline' column
+
+4. **Click 'Analyze'** to process your data
+
+5. **View detailed results** including:
+   - Threat detection with MITRE ATT&CK mappings
+   - Behavioral anomaly detection
+   - Interactive visualizations
+   - Performance metrics
+
+6. **Download the analyzed results** as CSV
+
 ### Simple Usage Instructions
+
+After installation, you have one main option:
+
+#### Option 1: Web Application (Only Recommended Option)
+Every time you want to use the tools, you need to:
+
+1. **Activate the virtual environment** (in a new command prompt session):
+   ```
+   clta_env\\Scripts\\activate.bat
+   ```
+
+2. **Run the web application**:
+   ```
+   streamlit run web_app.py
+   ```
+
+3. **Access the application** at `http://localhost:8501` in your browser
+
+When you're done, you can deactivate the environment:
+```
+deactivate
+```
+
+The web application provides the complete user interface for all functionality including analysis, rule creation, and dashboard visualization.
+## Simple Usage Instructions
 
 After installation, you have two main options:
 
