@@ -1696,6 +1696,456 @@
         "pattern": "\\\\btccutil\\\\b.*\\\\breset\\\\b",
         "description": "Transparency, Consent, and Control utility reset - Privacy bypass"
       }
+    ],
+    "DLL Loading Techniques": [
+      {
+        "pattern": "\\\\brundll32\\\\.exe\\\\b.*\\\\bjavascript:\\\\b",
+        "description": "Rundll32 with JavaScript - Potential code execution"
+      },
+      {
+        "pattern": "\\\\brundll32\\\\.exe\\\\b.*\\\\bzipfldr\\\\,",
+        "description": "Rundll32 ZipFldr - Potential fileless execution"
+      },
+      {
+        "pattern": "\\\\brundll32\\\\.exe\\\\b.*\\\\bshell32\\\\,",
+        "description": "Rundll32 Shell32 - Potential fileless execution"
+      },
+      {
+        "pattern": "\\\\brundll32\\\\.exe\\\\b.*\\\\.dll\\\\,\\\\w+",
+        "description": "Rundll32 executing DLL function - Potential DLL sideloading"
+      },
+      {
+        "pattern": "\\\\brundll32\\\\b.*\\\\,\\\\s*\\\\d+",
+        "description": "Rundll32 with ordinal - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\brundll32\\\\b.*\\\\b\\\\,\\\\s*Control_RunDLL\\\\b",
+        "description": "Rundll32 Control_RunDLL - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\brundll32\\\\b.*\\\\b\\\\,\\\\s*DllRegisterServer\\\\b",
+        "description": "Rundll32 DllRegisterServer - Potential DLL registration"
+      },
+      {
+        "pattern": "\\\\brundll32\\\\b.*\\\\b\\\\,\\\\s*DllInstall\\\\b",
+        "description": "Rundll32 DllInstall - Potential DLL installation"
+      },
+      {
+        "pattern": "\\\\brundll32\\\\b.*\\\\b\\\\,\\\\s*DllUnregisterServer\\\\b",
+        "description": "Rundll32 DllUnregisterServer - Potential DLL unregistration"
+      },
+      {
+        "pattern": "\\\\brundll32\\\\b.*\\\\b\\\\,\\\\s*Init\\\\b",
+        "description": "Rundll32 Init function - Potential DLL initialization"
+      },
+      {
+        "pattern": "\\\\bregsvr32\\\\b.*\\\\b/s\\\\b.*\\\\b/c\\\\b",
+        "description": "RegSvr32 silent and console - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bregsvr32\\\\b.*\\\\b/n\\\\b.*\\\\b/i\\\\b",
+        "description": "RegSvr32 no base and install - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bregsvr32\\\\b.*\\\\.sct\\\\b",
+        "description": "RegSvr32 with SCT file - Potential script execution"
+      },
+      {
+        "pattern": "\\\\bregsvr32\\\\b.*\\\\.dll\\\\b",
+        "description": "RegSvr32 registering DLL - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bregsvr32\\\\b.*\\\\bhttp",
+        "description": "RegSvr32 with HTTP - Potential remote DLL download"
+      },
+      {
+        "pattern": "\\\\bregsvr32\\\\b.*\\\\bftp",
+        "description": "RegSvr32 with FTP - Potential remote DLL download"
+      },
+      {
+        "pattern": "\\\\bregsvr32\\\\b.*\\\\b\\\\-n\\\\b",
+        "description": "RegSvr32 with -n flag - Potential DLL sideloading"
+      },
+      {
+        "pattern": "\\\\bregsvr32\\\\b.*\\\\b\\\\-s\\\\b",
+        "description": "RegSvr32 with -s flag - Potential silent DLL execution"
+      },
+      {
+        "pattern": "\\\\bregsvr32\\\\b.*\\\\b\\\\%temp%\\\\b",
+        "description": "RegSvr32 with temp path - Potential malicious DLL execution"
+      },
+      {
+        "pattern": "\\\\bregsvr32\\\\b.*\\\\b\\\\%appdata%\\\\b",
+        "description": "RegSvr32 with appdata path - Potential malicious DLL execution"
+      },
+      {
+        "pattern": "\\\\bmsiexec\\\\b.*\\\\b/a\\\\b",
+        "description": "Msiexec administrative install - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bmsiexec\\\\b.*\\\\b/q\\\\b",
+        "description": "Msiexec quiet install - Potential hidden DLL execution"
+      },
+      {
+        "pattern": "\\\\bmsiexec\\\\b.*\\\\b/passive\\\\b",
+        "description": "Msiexec passive install - Potential hidden DLL execution"
+      },
+      {
+        "pattern": "\\\\bmsiexec\\\\b.*\\\\.msi\\\\b",
+        "description": "Msiexec MSI execution - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bmsiexec\\\\b.*\\\\bhttp",
+        "description": "Msiexec with HTTP - Potential remote MSI download"
+      },
+      {
+        "pattern": "\\\\bmsiexec\\\\b.*\\\\bftp",
+        "description": "Msiexec with FTP - Potential remote MSI download"
+      },
+      {
+        "pattern": "\\\\bmsiexec\\\\b.*\\\\b\\\\%temp%\\\\b",
+        "description": "Msiexec with temp path - Potential malicious MSI execution"
+      },
+      {
+        "pattern": "\\\\bmsiexec\\\\b.*\\\\b\\\\%appdata%\\\\b",
+        "description": "Msiexec with appdata path - Potential malicious MSI execution"
+      },
+      {
+        "pattern": "\\\\bmsiexec\\\\b.*\\\\b\\\\-i\\\\b",
+        "description": "Msiexec install flag - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bmsiexec\\\\b.*\\\\b\\\\-x\\\\b",
+        "description": "Msiexec uninstall flag - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bodbcconf\\\\b.*\\\\b/c\\\\b.*\\\\bregsvr\\\\b",
+        "description": "Odbcconf with regsvr - Potential DLL registration"
+      },
+      {
+        "pattern": "\\\\bodbcconf\\\\b.*\\\\b/s\\\\b",
+        "description": "Odbcconf silent - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bodbcconf\\\\b.*\\\\.dll\\\\b",
+        "description": "Odbcconf with DLL - Potential DLL registration"
+      },
+      {
+        "pattern": "\\\\bodbcconf\\\\b.*\\\\bregsvr\\\\b",
+        "description": "Odbcconf regsvr command - Potential DLL registration"
+      },
+      {
+        "pattern": "\\\\bodbcconf\\\\b.*\\\\b\\\\-f\\\\b",
+        "description": "Odbcconf with file - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bodbcconf\\\\b.*\\\\b\\\\-a\\\\b",
+        "description": "Odbcconf with attribute - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bodbcconf\\\\b.*\\\\b\\\\-c\\\\b",
+        "description": "Odbcconf with command - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bodbcconf\\\\b.*\\\\b\\\\-r\\\\b",
+        "description": "Odbcconf with register - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bodbcconf\\\\b.*\\\\b\\\\%temp%\\\\b",
+        "description": "Odbcconf with temp path - Potential malicious DLL execution"
+      },
+      {
+        "pattern": "\\\\bodbcconf\\\\b.*\\\\b\\\\%appdata%\\\\b",
+        "description": "Odbcconf with appdata path - Potential malicious DLL execution"
+      },
+      {
+        "pattern": "\\\\bmshta\\\\b.*\\\\.sct\\\\b",
+        "description": "MSHTA with SCT file - Potential script execution"
+      },
+      {
+        "pattern": "\\\\bmshta\\\\b.*\\\\.hta\\\\b",
+        "description": "MSHTA with HTA file - Potential script execution"
+      },
+      {
+        "pattern": "\\\\bmshta\\\\b.*\\\\bjavascript:\\\\b",
+        "description": "MSHTA with JavaScript - Potential code execution"
+      },
+      {
+        "pattern": "\\\\bmshta\\\\b.*\\\\bhttp",
+        "description": "MSHTA with HTTP - Potential remote script download"
+      },
+      {
+        "pattern": "\\\\bmshta\\\\b.*\\\\bftp",
+        "description": "MSHTA with FTP - Potential remote script download"
+      },
+      {
+        "pattern": "\\\\bmshta\\\\b.*\\\\b\\\\%temp%\\\\b",
+        "description": "MSHTA with temp path - Potential malicious script execution"
+      },
+      {
+        "pattern": "\\\\bmshta\\\\b.*\\\\b\\\\%appdata%\\\\b",
+        "description": "MSHTA with appdata path - Potential malicious script execution"
+      },
+      {
+        "pattern": "\\\\bmshta\\\\b.*\\\\b\\\\-embedding\\\\b",
+        "description": "MSHTA embedding - Potential hidden execution"
+      },
+      {
+        "pattern": "\\\\bmshta\\\\b.*\\\\b\\\\-nonewwindow\\\\b",
+        "description": "MSHTA nonewwindow - Potential hidden execution"
+      },
+      {
+        "pattern": "\\\\bmshta\\\\b.*\\\\b\\\\-silent\\\\b",
+        "description": "MSHTA silent - Potential hidden execution"
+      },
+      {
+        "pattern": "\\\\bcertoc\\\\b.*\\\\b\\\\-LoadDll\\\\b",
+        "description": "CertOC LoadDll - Potential DLL sideloading"
+      },
+      {
+        "pattern": "\\\\bextexport\\\\b.*\\\\b\\\\-LoadDll\\\\b",
+        "description": "ExtExport LoadDll - Potential DLL sideloading"
+      },
+      {
+        "pattern": "\\\\bforfiles\\\\b.*\\\\b\\\\%temp%\\\\b.*\\\\b\\\\.dll\\\\b",
+        "description": "Forfiles with DLL in temp - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bforfiles\\\\b.*\\\\b\\\\%appdata%\\\\b.*\\\\b\\\\.dll\\\\b",
+        "description": "Forfiles with DLL in appdata - Potential DLL execution"
+      },
+      {
+        "pattern": "\\\\bmsconfig\\\\b.*\\\\b\\\\-LoadDll\\\\b",
+        "description": "Msconfig LoadDll - Potential DLL sideloading"
+      },
+      {
+        "pattern": "\\\\bmsdt\\\\b.*\\\\b\\\\-LoadDll\\\\b",
+        "description": "Msdt LoadDll - Potential DLL sideloading"
+      },
+      {
+        "pattern": "\\\\bpnputil\\\\b.*\\\\b\\\\-i\\\\b",
+        "description": "PnPUtil install driver - Potential malicious driver loading"
+      },
+      {
+        "pattern": "\\\\bregasm\\\\b.*\\\\.dll\\\\b",
+        "description": "RegAsm with DLL - Potential .NET assembly registration"
+      },
+      {
+        "pattern": "\\\\bregini\\\\b.*\\\\.dll\\\\b",
+        "description": "RegIni with DLL - Potential registry initialization"
+      },
+      {
+        "pattern": "\\\\bschtasks\\\\b.*\\\\b\\\\%temp%\\\\b.*\\\\b\\\\.dll\\\\b",
+        "description": "Schtasks with DLL in temp - Potential scheduled DLL execution"
+      },
+      {
+        "pattern": "\\\\bschtasks\\\\b.*\\\\b\\\\%appdata%\\\\b.*\\\\b\\\\.dll\\\\b",
+        "description": "Schtasks with DLL in appdata - Potential scheduled DLL execution"
+      },
+      {
+        "pattern": "\\\\bwinrm\\\\b.*\\\\binvoke\\\\b.*\\\\b\\\\-LoadDll\\\\b",
+        "description": "WinRM invoke with LoadDll - Potential remote DLL execution"
+      },
+      {
+        "pattern": "\\\\bwmic\\\\b.*\\\\bprocess\\\\b.*\\\\bcall\\\\b.*\\\\bcreate\\\\b.*\\\\b\\\\.dll\\\\b",
+        "description": "WMIC process call with DLL - Potential process creation with DLL"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\b\\\\[reflection\\\\.assembly\\\\]::loadfile\\\\b",
+        "description": "PowerShell Assembly.LoadFile - Potential .NET assembly loading"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\badd-type\\\\b.*\\\\b-language\\\\b.*\\\\bcsharp\\\\b",
+        "description": "PowerShell Add-Type C# - Potential code compilation and execution"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\bimport-module\\\\b.*\\\\b\\\\.dll\\\\b",
+        "description": "PowerShell Import-Module DLL - Potential module loading"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bloadwithpartialname\\\\b",
+        "description": "PowerShell Reflection Assembly Load - Potential assembly loading"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\bloadfile\\\\b.*\\\\b\\\\.dll\\\\b",
+        "description": "PowerShell LoadFile with DLL - Potential assembly loading"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\bloadfrom\\\\b.*\\\\b\\\\.dll\\\\b",
+        "description": "PowerShell LoadFrom with DLL - Potential assembly loading"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bload\\\\b",
+        "description": "PowerShell Reflection Assembly Load - Potential assembly loading"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bunsafe\\\\b",
+        "description": "PowerShell Reflection Unsafe - Potential unsafe assembly loading"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.emit\\\\b",
+        "description": "PowerShell Reflection.Emit - Potential dynamic code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b",
+        "description": "PowerShell Reflection Define - Potential dynamic assembly creation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bdynamic\\\\b",
+        "description": "PowerShell Dynamic Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bruntime\\\\b",
+        "description": "PowerShell Runtime Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\banonymous\\\\b",
+        "description": "PowerShell Anonymous Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bmodule\\\\b",
+        "description": "PowerShell Module Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\btype\\\\b",
+        "description": "PowerShell Type Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bmethod\\\\b",
+        "description": "PowerShell Method Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bfield\\\\b",
+        "description": "PowerShell Field Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bproperty\\\\b",
+        "description": "PowerShell Property Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bevent\\\\b",
+        "description": "PowerShell Event Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bconstructor\\\\b",
+        "description": "PowerShell Constructor Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bdestructor\\\\b",
+        "description": "PowerShell Destructor Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\binterface\\\\b",
+        "description": "PowerShell Interface Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\benum\\\\b",
+        "description": "PowerShell Enum Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bstruct\\\\b",
+        "description": "PowerShell Struct Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bclass\\\\b",
+        "description": "PowerShell Class Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bnamespace\\\\b",
+        "description": "PowerShell Namespace Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bassembly\\\\b",
+        "description": "PowerShell Assembly Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bmodulebuilder\\\\b",
+        "description": "PowerShell ModuleBuilder Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\btypebuilder\\\\b",
+        "description": "PowerShell TypeBuilder Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bmethodbuilder\\\\b",
+        "description": "PowerShell MethodBuilder Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bfieldbuilder\\\\b",
+        "description": "PowerShell FieldBuilder Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bpropertybuilder\\\\b",
+        "description": "PowerShell PropertyBuilder Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\beventbuilder\\\\b",
+        "description": "PowerShell EventBuilder Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bconstructorbuilder\\\\b",
+        "description": "PowerShell ConstructorBuilder Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bparameterbuilder\\\\b",
+        "description": "PowerShell ParameterBuilder Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b",
+        "description": "PowerShell Generic Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\btype\\\\b",
+        "description": "PowerShell Generic Type Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\bmethod\\\\b",
+        "description": "PowerShell Generic Method Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\bparameter\\\\b",
+        "description": "PowerShell Generic Parameter Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\bargument\\\\b",
+        "description": "PowerShell Generic Argument Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\binstance\\\\b",
+        "description": "PowerShell Generic Instance Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\binvoke\\\\b",
+        "description": "PowerShell Generic Invoke Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\bcall\\\\b",
+        "description": "PowerShell Generic Call Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\bnew\\\\b",
+        "description": "PowerShell Generic New Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\bcreate\\\\b",
+        "description": "PowerShell Generic Create Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\binstance\\\\b.*\\\\bcreate\\\\b",
+        "description": "PowerShell Generic Instance Create Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\binstance\\\\b.*\\\\bnew\\\\b",
+        "description": "PowerShell Generic Instance New Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\binstance\\\\b.*\\\\binvoke\\\\b",
+        "description": "PowerShell Generic Instance Invoke Assembly - Potential runtime code generation"
+      },
+      {
+        "pattern": "\\\\bpowershell\\\\b.*\\\\breflection\\\\.assembly\\\\b.*\\\\bdefine\\\\b.*\\\\bgeneric\\\\b.*\\\\binstance\\\\b.*\\\\bcall\\\\b",
+        "description": "PowerShell Generic Instance Call Assembly - Potential runtime code generation"
+      }
     ]
   },
   "Linux": {
