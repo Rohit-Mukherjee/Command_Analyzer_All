@@ -47,6 +47,28 @@
    ```
 
 ## Troubleshooting Common Issues
+### Execution Policy Issues
+If you encounter an error about scripts being disabled on your system:
+```
+File ... cannot be loaded because running scripts is disabled on this system.
+```
+
+This is due to PowerShell's execution policy. You have several options:
+
+1. **Change execution policy** (requires admin rights):
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+
+2. **Run with bypass policy**:
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File .\install_fixed.ps1
+   ```
+
+3. **Run in Command Prompt** using the batch script instead:
+   ```cmd
+   install.bat
+   ```
 
 ### Python Not Found
 If you get an error saying Python is not found:
