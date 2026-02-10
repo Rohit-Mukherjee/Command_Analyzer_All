@@ -1,6 +1,7 @@
 # PowerShell start script for Command Line Threat Analyzer on Windows
+# This script directly launches the web application
 
-Write-Host "🚀 Starting Command Line Threat Analyzer..." -ForegroundColor Green
+Write-Host "🚀 Starting Command Line Threat Analyzer Web Application..." -ForegroundColor Green
 
 # Check if virtual environment is active
 if (-not $env:VIRTUAL_ENV) {
@@ -22,42 +23,17 @@ if (-not $env:VIRTUAL_ENV) {
 }
 
 Write-Host ""
-Write-Host "📋 Available Options:" -ForegroundColor Cyan
-Write-Host "  1. Run Log Analyzer" -ForegroundColor White
-Write-Host "  2. Run Web App" -ForegroundColor White
-Write-Host "  3. Run Rules Wizard" -ForegroundColor White
-Write-Host "  4. Run Dashboard" -ForegroundColor White
-Write-Host "  5. Check Installation" -ForegroundColor White
+Write-Host "Starting the web application..." -ForegroundColor Yellow
+Write-Host "Access the application at http://localhost:8501 in your browser" -ForegroundColor Yellow
+Write-Host ""
+Write-Host "Press Ctrl+C to stop the application" -ForegroundColor Yellow
 Write-Host ""
 
-$choice = Read-Host "Enter your choice (1-5)"
-
-switch ($choice) {
-    "1" {
-        Write-Host "Starting Log Analyzer..." -ForegroundColor Yellow
-        python log_analyzer.py
-    }
-    "2" {
-        Write-Host "Starting Web App..." -ForegroundColor Yellow
-        streamlit run web_app.py
-    }
-    "3" {
-        Write-Host "Starting Rules Wizard..." -ForegroundColor Yellow
-        streamlit run rules_wizard_app.py
-    }
-    "4" {
-        Write-Host "Starting Dashboard..." -ForegroundColor Yellow
-        streamlit run dashboard.py
-    }
-    "5" {
-        Write-Host "Checking Installation..." -ForegroundColor Yellow
-        python check_installation.py
-    }
-    default {
-        Write-Host "Invalid choice." -ForegroundColor Red
-    }
-}
+# Launch the web application directly
+& streamlit run web_app.py
 
 Write-Host ""
-Write-Host "Press any key to continue..."
-$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+Write-Host "Web application has been closed." -ForegroundColor Yellow
+Write-Host ""
+
+Pause
