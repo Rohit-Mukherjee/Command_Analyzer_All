@@ -718,6 +718,648 @@
         "pattern": "dism\\.exe.*online.*enable-feature",
         "description": "DISM UAC Bypass"
       }
+    ],
+    "LOLBAS - Living Off The Land Binaries": [
+      {
+        "pattern": "\\breg\\s+sav",
+        "description": "Registry save operation - Potential data exfiltration"
+      },
+      {
+        "pattern": "\\breg\\s+export",
+        "description": "Registry export operation - Potential credential theft"
+      },
+      {
+        "pattern": "\\breg\\s+query",
+        "description": "Registry query operation - Potential information gathering"
+      },
+      {
+        "pattern": "\\bwmic\\s+process\\s+call",
+        "description": "WMIC process call - Potential process manipulation"
+      },
+      {
+        "pattern": "\\bwmic\\s+shadowcopy",
+        "description": "WMIC shadowcopy - Potential volume shadow copy manipulation"
+      },
+      {
+        "pattern": "\\bpsexec\\b",
+        "description": "PsExec usage - Potential lateral movement"
+      },
+      {
+        "pattern": "\\bschtasks\\b",
+        "description": "Scheduled tasks manipulation - Potential persistence"
+      },
+      {
+        "pattern": "\\bat\\b\\s+",
+        "description": "Legacy scheduled tasks - Potential persistence"
+      },
+      {
+        "pattern": "\\bnet\\s+user\\b",
+        "description": "Net user command - Potential account manipulation"
+      },
+      {
+        "pattern": "\\bnet\\s+group\\b",
+        "description": "Net group command - Potential privilege escalation"
+      },
+      {
+        "pattern": "\\bnet\\s+localgroup\\b",
+        "description": "Net localgroup command - Potential privilege escalation"
+      },
+      {
+        "pattern": "\\bnetsh\\b",
+        "description": "Netsh command - Potential firewall/network configuration"
+      },
+      {
+        "pattern": "\\bvssadmin\\b",
+        "description": "VSSAdmin command - Potential volume shadow copy manipulation"
+      },
+      {
+        "pattern": "\\bcd /d \\\"%temp%\\\"",
+        "description": "Changing to temp directory - Potential malware execution"
+      },
+      {
+        "pattern": "\\bcmd\\s+/c\\b|\\bcmd\\s+/k\\b",
+        "description": "CMD with /c or /k flags - Potential command execution"
+      },
+      {
+        "pattern": "\\bcertutil\\b",
+        "description": "CertUtil usage - Potential file download/encoding"
+      },
+      {
+        "pattern": "\\bbitsadmin\\b",
+        "description": "BITSAdmin usage - Potential file download"
+      },
+      {
+        "pattern": "\\brundll32\\b",
+        "description": "Rundll32 usage - Potential DLL execution"
+      },
+      {
+        "pattern": "\\bmshta\\b",
+        "description": "MSHTA usage - Potential script execution"
+      },
+      {
+        "pattern": "\\bcscript\\b",
+        "description": "CScript usage - Potential script execution"
+      },
+      {
+        "pattern": "\\bwscript\\b",
+        "description": "WScript usage - Potential script execution"
+      },
+      {
+        "pattern": "\\bpowershell.*-exec.*bypass",
+        "description": "PowerShell execution policy bypass"
+      },
+      {
+        "pattern": "\\bpowershell.*-enc",
+        "description": "PowerShell encoded command - Potential obfuscation"
+      },
+      {
+        "pattern": "\\bpowershell.*iex",
+        "description": "PowerShell IEX (Invoke-Expression) - Potential code execution"
+      },
+      {
+        "pattern": "\\bpowershell.*downloadstring",
+        "description": "PowerShell download string - Potential file download"
+      },
+      {
+        "pattern": "\\bpowershell.*invoke-webrequest",
+        "description": "PowerShell web request - Potential file download"
+      },
+      {
+        "pattern": "\\bwmic.*get.*process",
+        "description": "WMIC process enumeration"
+      },
+      {
+        "pattern": "\\bwmic.*create",
+        "description": "WMIC process creation - Potential execution"
+      },
+      {
+        "pattern": "\\bwmic.*shadowcopy",
+        "description": "WMIC shadowcopy manipulation"
+      },
+      {
+        "pattern": "\\bforfiles\\b",
+        "description": "Forfiles usage - Potential LOLBIN"
+      },
+      {
+        "pattern": "\\bdiskshadow\\b",
+        "description": "DiskShadow usage - Potential volume shadow copy manipulation"
+      },
+      {
+        "pattern": "\\bmsiexec\\b",
+        "description": "MSIExec usage - Potential execution"
+      },
+      {
+        "pattern": "\\bcmdkey\\b",
+        "description": "CMDKey usage - Potential credential manipulation"
+      },
+      {
+        "pattern": "\\bdsget\\b",
+        "description": "DSGet usage - Potential information gathering"
+      },
+      {
+        "pattern": "\\bdsquery\\b",
+        "description": "DSQuery usage - Potential information gathering"
+      },
+      {
+        "pattern": "\\bgpsvc\\b",
+        "description": "Group Policy Service - Potential manipulation"
+      },
+      {
+        "pattern": "\\bnetsh.*advfirewall",
+        "description": "Netsh firewall manipulation"
+      },
+      {
+        "pattern": "\\bnetsh.*portproxy",
+        "description": "Netsh port proxy - Potential port forwarding"
+      },
+      {
+        "pattern": "\\bnetsh.*wlan",
+        "description": "Netsh WLAN commands - Potential wireless enumeration"
+      },
+      {
+        "pattern": "\\bnet1\\b",
+        "description": "Net1 command - Potential network enumeration"
+      },
+      {
+        "pattern": "\\bntdsutil\\b",
+        "description": "NTDSUtil usage - Potential database manipulation"
+      },
+      {
+        "pattern": "\\bqwinsta\\b",
+        "description": "Qwinsta usage - Potential session enumeration"
+      },
+      {
+        "pattern": "\\bquery\\b",
+        "description": "Query command - Potential session/process enumeration"
+      },
+      {
+        "pattern": "\\brasdial\\b",
+        "description": "Rasdial usage - Potential connection manipulation"
+      },
+      {
+        "pattern": "\\btaskkill\\b",
+        "description": "Taskkill usage - Potential process termination"
+      },
+      {
+        "pattern": "\\btasklist\\b",
+        "description": "Tasklist usage - Potential process enumeration"
+      },
+      {
+        "pattern": "\\bwhoami\\b",
+        "description": "Whoami usage - Potential identity discovery"
+      },
+      {
+        "pattern": "\\bicacls\\b",
+        "description": "ICACLS usage - Potential permission manipulation"
+      },
+      {
+        "pattern": "\\btakeown\\b",
+        "description": "Takeown usage - Potential file ownership manipulation"
+      },
+      {
+        "pattern": "\\bwevtutil\\b",
+        "description": "WEVTUtil usage - Potential event log manipulation"
+      },
+      {
+        "pattern": "\\bwinrm\\b",
+        "description": "WinRM usage - Potential remote management"
+      },
+      {
+        "pattern": "\\bwuauclt\\b",
+        "description": "WUAUClt usage - Potential update manipulation"
+      },
+      {
+        "pattern": "\\bverifier\\b",
+        "description": "Verifier usage - Potential system manipulation"
+      },
+      {
+        "pattern": "\\bappcmd\\b",
+        "description": "AppCmd usage - Potential IIS manipulation"
+      },
+      {
+        "pattern": "\\bconfigsecuritypolicy\\b",
+        "description": "ConfigSecurityPolicy usage - Potential security policy manipulation"
+      },
+      {
+        "pattern": "\\bcsi\\b",
+        "description": "CSI usage - Potential code compilation"
+      },
+      {
+        "pattern": "\\bdesktopimgdownldr\\b",
+        "description": "DesktopImgDownldr usage - Potential file download"
+      },
+      {
+        "pattern": "\\bdiantz\\b",
+        "description": "DiAntz usage - Potential compression/obfuscation"
+      },
+      {
+        "pattern": "\\beventvwr\\b",
+        "description": "EventVWR usage - Potential UAC bypass"
+      },
+      {
+        "pattern": "\\bfinger\\b",
+        "description": "Finger usage - Potential network reconnaissance"
+      },
+      {
+        "pattern": "\\bfltmc\\b",
+        "description": "FltMc usage - Potential filter manipulation"
+      },
+      {
+        "pattern": "\\bgfxcorr\\b",
+        "description": "GfxCorr usage - Potential graphics driver manipulation"
+      },
+      {
+        "pattern": "\\bhashgen\\b",
+        "description": "HashGen usage - Potential hash computation"
+      },
+      {
+        "pattern": "\\bhivedump\\b",
+        "description": "HiveDump usage - Potential registry manipulation"
+      },
+      {
+        "pattern": "\\bmakecab\\b",
+        "description": "MakeCab usage - Potential compression"
+      },
+      {
+        "pattern": "\\bmanage-bde\\b",
+        "description": "Manage-BDE usage - Potential BitLocker manipulation"
+      },
+      {
+        "pattern": "\\bmobs\\b",
+        "description": "MOBS usage - Potential object manipulation"
+      },
+      {
+        "pattern": "\\bmoveuser\\b",
+        "description": "MoveUser usage - Potential user profile manipulation"
+      },
+      {
+        "pattern": "\\bnetdom\\b",
+        "description": "NetDom usage - Potential domain manipulation"
+      },
+      {
+        "pattern": "\\bnltest\\b",
+        "description": "NLTest usage - Potential domain enumeration"
+      },
+      {
+        "pattern": "\\bopenssh\\b",
+        "description": "OpenSSH usage - Potential secure shell"
+      },
+      {
+        "pattern": "\\bpackager\\b",
+        "description": "Packager usage - Potential COM object manipulation"
+      },
+      {
+        "pattern": "\\bpktmon\\b",
+        "description": "PktMon usage - Potential packet monitoring"
+      },
+      {
+        "pattern": "\\bpresentationhost\\b",
+        "description": "PresentationHost usage - Potential XAML execution"
+      },
+      {
+        "pattern": "\\bprintbrm\\b",
+        "description": "PrintBrm usage - Potential printer backup/restore"
+      },
+      {
+        "pattern": "\\bprovtool\\b",
+        "description": "ProvTool usage - Potential provisioning"
+      },
+      {
+        "pattern": "\\bpsexecsvc\\b",
+        "description": "PsExecSvc usage - Potential service"
+      },
+      {
+        "pattern": "\\brasautou\\b",
+        "description": "RasAutoU usage - Potential connection automation"
+      },
+      {
+        "pattern": "\\brasdialer\\b",
+        "description": "RasDialer usage - Potential connection manipulation"
+      },
+      {
+        "pattern": "\\brpcping\\b",
+        "description": "RpcPing usage - Potential RPC testing"
+      },
+      {
+        "pattern": "\\bscriptrunner\\b",
+        "description": "ScriptRunner usage - Potential script execution"
+      },
+      {
+        "pattern": "\\bsetres\\b",
+        "description": "SetRes usage - Potential resolution manipulation"
+      },
+      {
+        "pattern": "\\bshrpubw\\b",
+        "description": "ShrPubW usage - Potential share publishing"
+      },
+      {
+        "pattern": "\\bslui\\b",
+        "description": "SLUI usage - Potential licensing manipulation"
+      },
+      {
+        "pattern": "\\bstordiag\\b",
+        "description": "StorDiag usage - Potential storage diagnostics"
+      },
+      {
+        "pattern": "\\bsyncappvpublishingserver\\b",
+        "description": "SyncAppvPublishingServer usage - Potential App-V manipulation"
+      },
+      {
+        "pattern": "\\bsysreset\\b",
+        "description": "SysReset usage - Potential system reset"
+      },
+      {
+        "pattern": "\\bttdstarter\\b",
+        "description": "TTDStarter usage - Potential trace replay"
+      },
+      {
+        "pattern": "\\btypeperf\\b",
+        "description": "TypePerf usage - Potential performance monitoring"
+      },
+      {
+        "pattern": "\\butilman\\b",
+        "description": "Utilman usage - Potential accessibility feature manipulation"
+      },
+      {
+        "pattern": "\\bvsdiagtracke\\b",
+        "description": "VsDiagTracke usage - Potential diagnostic tracking"
+      },
+      {
+        "pattern": "\\bvsgraphicsdiag\\b",
+        "description": "VsGraphicsDiag usage - Potential graphics diagnostics"
+      },
+      {
+        "pattern": "\\bwabuninst\\b",
+        "description": "WABUnInst usage - Potential address book manipulation"
+      },
+      {
+        "pattern": "\\bwermgr\\b",
+        "description": "WerMgr usage - Potential error reporting manipulation"
+      },
+      {
+        "pattern": "\\bwextract\\b",
+        "description": "WExtract usage - Potential file extraction"
+      },
+      {
+        "pattern": "\\bwfs\\b",
+        "description": "WFS usage - Potential file system manipulation"
+      },
+      {
+        "pattern": "\\bwiaacmgr\\b",
+        "description": "WiaAcMgr usage - Potential image acquisition manipulation"
+      },
+      {
+        "pattern": "\\bwmic.exe\\b",
+        "description": "WMIC executable usage - Potential WMI manipulation"
+      },
+      {
+        "pattern": "\\bwscript.exe\\b",
+        "description": "WScript executable usage - Potential script execution"
+      },
+      {
+        "pattern": "\\bcscript.exe\\b",
+        "description": "CScript executable usage - Potential script execution"
+      },
+      {
+        "pattern": "\\brundll32.exe\\b",
+        "description": "Rundll32 executable usage - Potential DLL execution"
+      },
+      {
+        "pattern": "\\bmshta.exe\\b",
+        "description": "MSHTA executable usage - Potential HTML application execution"
+      },
+      {
+        "pattern": "\\bpowershell.exe\\b",
+        "description": "PowerShell executable usage - Potential script execution"
+      },
+      {
+        "pattern": "\\bpwsh.exe\\b",
+        "description": "PowerShell Core executable usage - Potential script execution"
+      },
+      {
+        "pattern": "\\bcmd.exe\\b",
+        "description": "CMD executable usage - Potential command execution"
+      },
+      {
+        "pattern": "\\breg.exe\\b",
+        "description": "Registry executable usage - Potential registry manipulation"
+      },
+      {
+        "pattern": "\\bschtasks.exe\\b",
+        "description": "Scheduled tasks executable usage - Potential task manipulation"
+      },
+      {
+        "pattern": "\\bnet.exe\\b",
+        "description": "Net executable usage - Potential network manipulation"
+      },
+      {
+        "pattern": "\\bnet1.exe\\b",
+        "description": "Net1 executable usage - Potential network manipulation"
+      },
+      {
+        "pattern": "\\bvssadmin.exe\\b",
+        "description": "VSSAdmin executable usage - Potential volume shadow copy manipulation"
+      },
+      {
+        "pattern": "\\bwevtutil.exe\\b",
+        "description": "WEVTUtil executable usage - Potential event log manipulation"
+      },
+      {
+        "pattern": "\\bcertutil.exe\\b",
+        "description": "CertUtil executable usage - Potential certificate/file manipulation"
+      },
+      {
+        "pattern": "\\bitsadmin.exe\\b",
+        "description": "BITSAdmin executable usage - Potential file transfer"
+      },
+      {
+        "pattern": "\\bmsiexec.exe\\b",
+        "description": "MSIExec executable usage - Potential installer manipulation"
+      },
+      {
+        "pattern": "\\btar.exe\\b",
+        "description": "Tar executable usage - Potential archive manipulation"
+      },
+      {
+        "pattern": "\\bcertoc.exe\\b",
+        "description": "CertOC executable usage - Potential certificate manipulation"
+      },
+      {
+        "pattern": "\\bdriverquery.exe\\b",
+        "description": "DriverQuery executable usage - Potential driver enumeration"
+      },
+      {
+        "pattern": "\\bexpand.exe\\b",
+        "description": "Expand executable usage - Potential file expansion"
+      },
+      {
+        "pattern": "\\bextrac32.exe\\b",
+        "description": "Extrac32 executable usage - Potential file extraction"
+      },
+      {
+        "pattern": "\\bfindstr.exe\\b",
+        "description": "FindStr executable usage - Potential string search"
+      },
+      {
+        "pattern": "\\bfxssvc.exe\\b",
+        "description": "FXS SVC executable usage - Potential fax service manipulation"
+      },
+      {
+        "pattern": "\\bgpsvc.exe\\b",
+        "description": "GPSVC executable usage - Potential group policy manipulation"
+      },
+      {
+        "pattern": "\\bhh.exe\\b",
+        "description": "HH executable usage - Potential help file execution"
+      },
+      {
+        "pattern": "\\biexpress.exe\\b",
+        "description": "IExpress executable usage - Potential SFX creation"
+      },
+      {
+        "pattern": "\\bklist.exe\\b",
+        "description": "KList executable usage - Potential Kerberos ticket manipulation"
+      },
+      {
+        "pattern": "\\bksetup.exe\\b",
+        "description": "KSetup executable usage - Potential Kerberos setup"
+      },
+      {
+        "pattern": "\\blegalnotice.exe\\b",
+        "description": "LegalNotice executable usage - Potential message box manipulation"
+      },
+      {
+        "pattern": "\\blpremove.exe\\b",
+        "description": "LPRemove executable usage - Potential license pack removal"
+      },
+      {
+        "pattern": "\\bmagnify.exe\\b",
+        "description": "Magnify executable usage - Potential accessibility feature manipulation"
+      },
+      {
+        "pattern": "\\bmftrace.exe\\b",
+        "description": "MFTrace executable usage - Potential media foundation tracing"
+      },
+      {
+        "pattern": "\\bmigui.exe\\b",
+        "description": "MigUI executable usage - Potential migration UI"
+      },
+      {
+        "pattern": "\\bnarrator.exe\\b",
+        "description": "Narrator executable usage - Potential accessibility feature manipulation"
+      },
+      {
+        "pattern": "\\bnetsh.exe\\b",
+        "description": "Netsh executable usage - Potential network configuration"
+      },
+      {
+        "pattern": "\\bnslookup.exe\\b",
+        "description": "NSLookup executable usage - Potential DNS queries"
+      },
+      {
+        "pattern": "\\bntdsutil.exe\\b",
+        "description": "NTDSUtil executable usage - Potential Active Directory manipulation"
+      },
+      {
+        "pattern": "\\bodbcad32.exe\\b",
+        "description": "ODBCCP32 executable usage - Potential ODBC configuration"
+      },
+      {
+        "pattern": "\\bodbccp32.exe\\b",
+        "description": "ODBCCP32 executable usage - Potential ODBC configuration"
+      },
+      {
+        "pattern": "\\boobeload.exe\\b",
+        "description": "OOBELOAD executable usage - Potential OOBE manipulation"
+      },
+      {
+        "pattern": "\\bpktmon.exe\\b",
+        "description": "PktMon executable usage - Potential packet monitoring"
+      },
+      {
+        "pattern": "\\bpresentationhost.exe\\b",
+        "description": "PresentationHost executable usage - Potential XAML execution"
+      },
+      {
+        "pattern": "\\bpsr.exe\\b",
+        "description": "PSR executable usage - Potential problem steps recorder"
+      },
+      {
+        "pattern": "\\bquickassist.exe\\b",
+        "description": "QuickAssist executable usage - Potential remote assistance"
+      },
+      {
+        "pattern": "\\brasautou.exe\\b",
+        "description": "RasAutoU executable usage - Potential connection automation"
+      },
+      {
+        "pattern": "\\brasdialer.exe\\b",
+        "description": "RasDialer executable usage - Potential connection manipulation"
+      },
+      {
+        "pattern": "\\brstrui.exe\\b",
+        "description": "RSTRUI executable usage - Potential system restore"
+      },
+      {
+        "pattern": "\\bsettcp.exe\\b",
+        "description": "SetTCP executable usage - Potential TCP configuration"
+      },
+      {
+        "pattern": "\\bshrpubw.exe\\b",
+        "description": "ShrPubW executable usage - Potential share publishing"
+      },
+      {
+        "pattern": "\\bspellcheckinghost.exe\\b",
+        "description": "SpellCheckingHost executable usage - Potential spell check manipulation"
+      },
+      {
+        "pattern": "\\bstordiag.exe\\b",
+        "description": "StorDiag executable usage - Potential storage diagnostics"
+      },
+      {
+        "pattern": "\\bsynophoto.exe\\b",
+        "description": "SynoPhoto executable usage - Potential Synology photo manipulation"
+      },
+      {
+        "pattern": "\\bsyskey.exe\\b",
+        "description": "SysKey executable usage - Potential SAM database protection"
+      },
+      {
+        "pattern": "\\bttdstarter.exe\\b",
+        "description": "TTDStarter executable usage - Potential trace replay"
+      },
+      {
+        "pattern": "\\btypeperf.exe\\b",
+        "description": "TypePerf executable usage - Potential performance monitoring"
+      },
+      {
+        "pattern": "\\buacdiaglauncher.exe\\b",
+        "description": "UACDiagLauncher executable usage - Potential UAC diagnostics"
+      },
+      {
+        "pattern": "\\butilman.exe\\b",
+        "description": "Utilman executable usage - Potential accessibility feature manipulation"
+      },
+      {
+        "pattern": "\\bwabuninst.exe\\b",
+        "description": "WABUnInst executable usage - Potential address book manipulation"
+      },
+      {
+        "pattern": "\\bwermgr.exe\\b",
+        "description": "WerMgr executable usage - Potential error reporting manipulation"
+      },
+      {
+        "pattern": "\\bwfs.exe\\b",
+        "description": "WFS executable usage - Potential file system manipulation"
+      },
+      {
+        "pattern": "\\bwiaacmgr.exe\\b",
+        "description": "WiaAcMgr executable usage - Potential image acquisition manipulation"
+      },
+      {
+        "pattern": "\\bxwizard.exe\\b",
+        "description": "XWizard executable usage - Potential wizard execution"
+      }
     ]
   },
   "Linux": {
