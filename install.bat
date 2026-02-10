@@ -1,1 +1,125 @@
-QGVjaG8gb2ZmClJFTSBJbnN0YWxsYXRpb24gc2NyaXB0IGZvciBDb21tYW5kIExpbmUgVGhyZWF0IEFuYWx5emVyIG9uIFdpbmRvd3MKCmVjaG8g8J+agCBJbnN0YWxsaW5nIENvbW1hbmQgTGluZSBUaHJlYXQgQW5hbHl6ZXIuLi4KClJFTSBDaGVjayBpZiBQeXRob24gMy44KyBpcyBpbnN0YWxsZWQKcHl0aG9uIC0tdmVyc2lvbiA+bnVsIDI+JjEKaWYgZXJyb3JsZXZlbCAxICgKICAgIGVjaG8g4p2MIFB5dGhvbiAzIGlzIG5vdCBpbnN0YWxsZWQuIFBsZWFzZSBpbnN0YWxsIFB5dGhvbiAzLjggb3IgaGlnaGVyLgogICAgcGF1c2UKICAgIGV4aXQgL2IgMQopCgpmb3IgL2YgInRva2Vucz0yIGRlbGltcz0gIiAlJWkgaW4gKCdweXRob24gLS12ZXJzaW9uIDJePl4mMScpIGRvIHNldCBQWVRIT05fVkVSU0lPTj0lJWkKZWNobyDinIUgUHl0aG9uICVQWVRIT05fVkVSU0lPTiUgZGV0ZWN0ZWQKClJFTSBDaGVjayBQeXRob24gdmVyc2lvbgpmb3IgL2YgInRva2Vucz0xLDIsMyBkZWxpbXM9LiIgJSVhIGluICgiJVBZVEhPTl9WRVJTSU9OJSIpIGRvICgKICAgIHNldCBNQUpPUj0lJWEKICAgIHNldCBNSU5PUj0lJWIKKQoKaWYgJU1BSk9SJSBsc3MgMyAoCiAgICBlY2hvIOKdjCBQeXRob24gdmVyc2lvbiBpcyB0b28gb2xkLiBQbGVhc2UgdXBncmFkZSB0byBQeXRob24gMy44IG9yIGhpZ2hlci4KICAgIHBhdXNlCiAgICBleGl0IC9iIDEKKQoKaWYgJU1BSk9SJSBlcXUgMyBpZiAlTUlOT1IlIGxzcyA4ICgKICAgIGVjaG8g4p2MIFB5dGhvbiB2ZXJzaW9uIGlzIHRvbyBvbGQuIFBsZWFzZSB1cGdyYWRlIHRvIFB5dGhvbiAzLjggb3IgaGlnaGVyLgogICAgcGF1c2UKICAgIGV4aXQgL2IgMQopCgpSRU0gQ2hlY2sgaWYgcGlwIGlzIGluc3RhbGxlZApwaXAgLS12ZXJzaW9uID5udWwgMj4mMQppZiBlcnJvcmxldmVsIDEgKAogICAgZWNobyDinYwgcGlwIGlzIG5vdCBpbnN0YWxsZWQuIEF0dGVtcHRpbmcgdG8gaW5zdGFsbC4uLgogICAgcHl0aG9uIC1tIGVuc3VyZXBpcCAtLXVwZ3JhZGUKICAgIGlmIGVycm9ybGV2ZWwgMSAoCiAgICAgICAgZWNobyDinYwgRmFpbGVkIHRvIGluc3RhbGwgcGlwLiBQbGVhc2UgaW5zdGFsbCBwaXAgbWFudWFsbHkuCiAgICAgICAgcGF1c2UKICAgICAgICBleGl0IC9iIDEKICAgICkKKQoKZWNobyDinIUgcGlwIGlzIGF2YWlsYWJsZQoKUkVNIENyZWF0ZSB2aXJ0dWFsIGVudmlyb25tZW50IGlmIG5vdCBhbHJlYWR5IGluIG9uZQppZiAiJVZJUlRVQUxfRU5WJSI9PSIiICgKICAgIGVjaG8g8J+TpiBDcmVhdGluZyB2aXJ0dWFsIGVudmlyb25tZW50Li4uCiAgICBweXRob24gLW0gdmVudiBjbHRhX2VudgogICAgY2FsbCBjbHRhX2VudlxTY3JpcHRzXGFjdGl2YXRlLmJhdAogICAgZWNobyDinIUgVmlydHVhbCBlbnZpcm9ubWVudCBjcmVhdGVkIGFuZCBhY3RpdmF0ZWQKKSBlbHNlICgKICAgIGVjaG8g4pqg77iPICBBbHJlYWR5IGluIGEgdmlydHVhbCBlbnZpcm9ubWVudAopCgpSRU0gVXBncmFkZSBwaXAKZWNobyDirIbvuI8gIFVwZ3JhZGluZyBwaXAuLi4KcHl0aG9uIC1tIHBpcCBpbnN0YWxsIC0tdXBncmFkZSBwaXAKClJFTSBJbnN0YWxsIHJlcXVpcmVtZW50cwplY2hvIPCfk6YgSW5zdGFsbGluZyBkZXBlbmRlbmNpZXMuLi4KcGlwIGluc3RhbGwgLXIgcmVxdWlyZW1lbnRzLnR4dAoKUkVNIEluc3RhbGwgdGhlIHBhY2thZ2UgaW4gZGV2ZWxvcG1lbnQgbW9kZQplY2hvIPCfk6YgSW5zdGFsbGluZyBDb21tYW5kIExpbmUgVGhyZWF0IEFuYWx5emVyLi4uCnBpcCBpbnN0YWxsIC1lIC4KCmVjaG8g4pyFIEluc3RhbGxhdGlvbiBjb21wbGV0ZWQgc3VjY2Vzc2Z1bGx5IQoKZWNoby4KZWNobyDwn5OLIFVzYWdlIEluc3RydWN0aW9uczoKZWNobyAgIDEuIFRvIHJ1biB0aGUgYW5hbHl6ZXI6IHB5dGhvbiBsb2dfYW5hbHl6ZXIucHkKZWNobyAgIDIuIFRvIHJ1biB0aGUgd2ViIGFwcDogc3RyZWFtbGl0IHJ1biB3ZWJfYXBwLnB5CmVjaG8gICAzLiBUbyBydW4gdGhlIHJ1bGVzIHdpemFyZDogc3RyZWFtbGl0IHJ1biBydWxlc193aXphcmRfYXBwLnB5CmVjaG8gICA0LiBUbyBydW4gdGhlIGRhc2hib2FyZDogc3RyZWFtbGl0IHJ1biBkYXNoYm9hcmQucHkKZWNoby4KZWNobyDwn5KhIFRpcDogQWN0aXZhdGUgdGhlIHZpcnR1YWwgZW52aXJvbm1lbnQgYmVmb3JlIHJ1bm5pbmcgdGhlIHRvb2xzOgppZiAiJVZJUlRVQUxfRU5WJSI9PSIiICgKICAgIGVjaG8gICBjbHRhX2VudlxTY3JpcHRzXGFjdGl2YXRlLmJhdAopCmVjaG8uCmVjaG8g8J+UkiBSZW1lbWJlciB0byBkZWFjdGl2YXRlIHRoZSBlbnZpcm9ubWVudCB3aGVuIGRvbmU6CmVjaG8gICBkZWFjdGl2YXRlCmVjaG8uCnBhdXNl
+@echo off
+REM Fixed installation script for Command Line Threat Analyzer on Windows
+
+echo 🚀 Installing Command Line Threat Analyzer...
+
+REM Check if Python 3.8+ is installed (try both python and py commands)
+python --version >nul 2>&1
+if errorlevel 1 (
+    py --version >nul 2>&1
+    if errorlevel 1 (
+        echo ❌ Python is not installed. Please install Python 3.8 or higher.
+        pause
+        exit /b 1
+    ) else (
+        set PYTHON_CMD=py
+    )
+) else (
+    set PYTHON_CMD=python
+)
+
+REM Get Python version
+for /f "tokens=2 delims= " %%i in ('%PYTHON_CMD% --version 2^>^&1') do set PYTHON_VERSION=%%i
+echo ✅ Python %PYTHON_VERSION% detected
+
+REM Parse version numbers
+for /f "tokens=1,2,3 delims=." %%a in ("%PYTHON_VERSION%") do (
+    set MAJOR=%%b
+    set MINOR=%%c
+)
+
+REM Check major version
+if %MAJOR% lss 3 (
+    echo ❌ Python version is too old. Please upgrade to Python 3.8 or higher.
+    pause
+    exit /b 1
+)
+
+REM Check minor version if major is 3
+if %MAJOR% equ 3 (
+    if %MINOR% lss 8 (
+        echo ❌ Python version is too old. Please upgrade to Python 3.8 or higher.
+        pause
+        exit /b 1
+    )
+)
+
+REM Check if pip is installed
+%PYTHON_CMD% -m pip --version >nul 2>&1
+if errorlevel 1 (
+    echo ❌ pip is not installed. Attempting to install...
+    %PYTHON_CMD% -m ensurepip --upgrade
+    if errorlevel 1 (
+        echo ❌ Failed to install pip. Please install pip manually.
+        pause
+        exit /b 1
+    )
+)
+
+echo ✅ pip is available
+
+REM Create virtual environment if not already in one
+if "%VIRTUAL_ENV%"=="" (
+    echo 📦 Creating virtual environment...
+    %PYTHON_CMD% -m venv clta_env
+    if errorlevel 1 (
+        echo ❌ Failed to create virtual environment.
+        pause
+        exit /b 1
+    )
+    call clta_env\Scripts\activate.bat
+    if errorlevel 1 (
+        echo ❌ Failed to activate virtual environment.
+        pause
+        exit /b 1
+    )
+    echo ✅ Virtual environment created and activated
+) else (
+    echo ⚠️  Already in a virtual environment
+)
+
+REM Upgrade pip
+echo ⬆️  Upgrading pip...
+python -m pip install --upgrade pip
+if errorlevel 1 (
+    echo ⚠️  Warning: Failed to upgrade pip, continuing anyway...
+)
+
+REM Check if requirements.txt exists before installing
+if exist requirements.txt (
+    echo 📦 Installing dependencies from requirements.txt...
+    pip install -r requirements.txt
+    if errorlevel 1 (
+        echo ⚠️  Warning: Failed to install some dependencies from requirements.txt
+    )
+) else (
+    echo ⚠️  requirements.txt not found, installing dependencies from pyproject.toml...
+)
+
+REM Install the package in development mode
+echo 📦 Installing Command Line Threat Analyzer in development mode...
+pip install -e .
+if errorlevel 1 (
+    echo ❌ Failed to install the package.
+    pause
+    exit /b 1
+)
+
+echo ✅ Installation completed successfully!
+
+echo.
+echo 📋 Usage Instructions:
+echo   1. To run the analyzer: python log_analyzer.py
+echo   2. To run the web app: streamlit run web_app.py
+echo   3. To run the rules wizard: streamlit run rules_wizard_app.py
+echo   4. To run the dashboard: streamlit run dashboard.py
+echo.
+echo 💡 Tip: Activate the virtual environment before running the tools:
+if "%VIRTUAL_ENV%"=="" (
+    echo   clta_env\Scripts\activate.bat
+)
+echo.
+echo 🔒 Remember to deactivate the environment when done:
+echo   deactivate
+echo.
+pause
