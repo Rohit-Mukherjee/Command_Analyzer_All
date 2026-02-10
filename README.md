@@ -189,6 +189,35 @@ docker run -p 8501:8501 -v $(pwd):/app/data command-line-threat-analyzer
 Access the application at `http://localhost:8501`
 
 ## 📈 Usage
+### Simple Usage Instructions
+
+After installation, you have two main options:
+
+#### Option 1: Menu Interface (Easiest)
+```
+start_clta.bat
+```
+This provides a menu with all available options.
+
+#### Option 2: Direct Usage
+Every time you want to use the tools, you need to:
+
+1. **Activate the virtual environment** (in a new command prompt session):
+   ```
+   clta_env\\Scripts\\activate.bat
+   ```
+
+2. **Run the tool you want**:
+   - For web interface: `streamlit run web_app.py`
+   - For command line analysis: `python log_analyzer.py`
+   - For rule creation: `streamlit run rules_wizard_app.py`
+   - For dashboard: `streamlit run dashboard.py`
+
+When you're done, you can deactivate the environment:
+```
+deactivate
+```
+
 
 ### Basic Analysis
 1. Prepare your command line data in CSV format with a `commandline` column
