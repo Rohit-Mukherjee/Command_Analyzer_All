@@ -1,7 +1,9 @@
 @echo off
 REM Start script for Command Line Threat Analyzer on Windows
+REM This script directly launches the web application
 
-echo 🚀 Starting Command Line Threat Analyzer...
+echo 🚀 Starting Command Line Threat Analyzer Web Application...
+echo.
 
 REM Check if virtual environment is active
 if "%VIRTUAL_ENV%"=="" (
@@ -23,34 +25,16 @@ if "%VIRTUAL_ENV%"=="" (
 )
 
 echo.
-echo 📋 Available Options:
-echo   1. Run Log Analyzer
-echo   2. Run Web App
-echo   3. Run Rules Wizard
-echo   4. Run Dashboard
-echo   5. Check Installation
+echo Starting the web application...
+echo Access the application at http://localhost:8501 in your browser
 echo.
-set /p choice="Enter your choice (1-5): "
+echo Press Ctrl+C to stop the application
+echo.
 
-if "%choice%"=="1" (
-    echo Starting Log Analyzer...
-    python log_analyzer.py
-) else if "%choice%"=="2" (
-    echo Starting Web App...
-    streamlit run web_app.py
-) else if "%choice%"=="3" (
-    echo Starting Rules Wizard...
-    streamlit run rules_wizard_app.py
-) else if "%choice%"=="4" (
-    echo Starting Dashboard...
-    streamlit run dashboard.py
-) else if "%choice%"=="5" (
-    echo Checking Installation...
-    python check_installation.py
-) else (
-    echo Invalid choice.
-)
+REM Launch the web application directly
+streamlit run web_app.py
 
 echo.
-echo Press any key to continue...
-pause >nul
+echo Web application has been closed.
+echo.
+pause
