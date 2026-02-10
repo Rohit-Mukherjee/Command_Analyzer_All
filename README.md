@@ -84,8 +84,8 @@ Comprehensive test scenarios for validation.
 #### On Linux/macOS:
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd command-line-analyzer
+git clone https://github.com/Rohit-Mukherjee/Command_Analyzer_All
+cd Command_Analyzer_All
 
 # Make the install script executable and run it
 chmod +x install.sh
@@ -95,8 +95,8 @@ chmod +x install.sh
 #### On Windows:
 ```cmd
 # Clone the repository
-git clone <repository-url>
-cd command-line-analyzer
+git clone https://github.com/Rohit-Mukherjee/Command_Analyzer_All
+cd Command_Analyzer_All
 
 # Run the installation script
 install.bat
@@ -116,8 +116,8 @@ If you prefer to install manually:
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd command-line-analyzer
+git clone https://github.com/Rohit-Mukherjee/Command_Analyzer_All
+cd Command_Analyzer_All
 
 # (Optional but recommended) Create a virtual environment
 python -m venv clta_env
@@ -173,8 +173,8 @@ For users who prefer containerization:
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd command-line-analyzer
+git clone https://github.com/Rohit-Mukherjee/Command_Analyzer_All
+cd Command_Analyzer_All
 
 # Build the Docker image
 docker build -t command-line-threat-analyzer .
