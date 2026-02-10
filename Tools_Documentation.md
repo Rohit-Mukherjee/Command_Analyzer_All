@@ -1,8 +1,8 @@
-# Command Line Threat Analyzer (CLTA) - Black Hat Arsenal 2026
+# Command Line Threat Analyzer (CLTA)
 
 ## Executive Summary
 
-The Command Line Threat Analyzer (CLTA) is a revolutionary cybersecurity tool designed for detecting and analyzing suspicious command line activities across Windows, Linux, and macOS platforms. As a sophisticated command analysis tool, CLTA addresses a critical operational challenge: cybersecurity analysts must often sift through extensive command logs where only detection commands are highlighted, but the complete attack story unfolds across multiple interconnected commands. CLTA solves this by automatically correlating related commands, providing behavioral analysis, and visualizing attack sequences to reveal the complete narrative of multi-command attacks.
+The Command Line Threat Analyzer (CLTA) is a comprehensive cybersecurity tool designed for detecting and analyzing suspicious command line activities across Windows, Linux, and macOS platforms. As a sophisticated command analysis tool, CLTA addresses a critical operational challenge: cybersecurity analysts must often sift through extensive command logs where only detection commands are highlighted, but the complete attack story unfolds across multiple interconnected commands. CLTA solves this by automatically correlating related commands, providing behavioral analysis, and visualizing attack sequences to reveal the complete narrative of multi-command attacks.
 
 ## Problem Statement
 
