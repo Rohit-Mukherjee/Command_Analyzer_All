@@ -1,4 +1,21 @@
 # PowerShell installation script for Command Line Threat Analyzer on Windows
+# NOTE: If you get an execution policy error, run this command first:
+# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# Check execution policy and warn user if needed
+$currentPolicy = Get-ExecutionPolicy -Scope CurrentUser
+if ($currentPolicy -eq "Restricted") {
+    Write-Host "⚠️  PowerShell execution policy is restricted." -ForegroundColor Yellow
+    Write-Host "Please run one of the following commands in an elevated PowerShell session:" -ForegroundColor Yellow
+    Write-Host "  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser" -ForegroundColor Cyan
+    Write-Host "" 
+    Write-Host "Or run this script with bypass policy:" -ForegroundColor Yellow
+    Write-Host "  powershell -ExecutionPolicy Bypass -File .\install_fixed.ps1" -ForegroundColor Cyan
+    Write-Host ""
+    Write-Host "Press any key to exit..."
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+    exit 1
+}
 
 Write-Host "🚀 Installing Command Line Threat Analyzer..." -ForegroundColor Green
 
