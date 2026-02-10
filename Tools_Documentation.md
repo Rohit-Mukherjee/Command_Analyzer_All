@@ -351,12 +351,6 @@ Each scenario demonstrates how CLTA reveals the complete attack story by analyzi
 - Git for version control
 - Docker (optional, for containerized deployment)
 
-## Performance Benchmarks
-
-- Processes 10,000+ commands per minute on standard hardware
-- Memory usage: ~200MB baseline, scales with dataset size
-- Supports log files up to 10GB (with streaming processing)
-- Real-time analysis with sub-second response times for small batches
 
 ## Security Considerations
 
