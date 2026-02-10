@@ -2,6 +2,14 @@
 
 A comprehensive cybersecurity tool for detecting and analyzing suspicious command line activities across Windows, Linux, and macOS platforms.
 
+## ⚠️ Repository Location Notice
+
+**This repository has been moved to:** [https://github.com/Rohit-Mukherjee/Command_Analyzer_All](https://github.com/Rohit-Mukherjee/Command_Analyzer_All)
+
+**All files from the Code_Projects directory have been successfully uploaded to the above repository.**
+
+**Please use the new repository URL for all future access, contributions, and updates.**
+
 ## 🚀 Features
 
 ### Core Analysis
@@ -363,3 +371,9 @@ This tool meets the standards for cybersecurity conferences with:
 
 ---
 *Command Line Threat Analyzer - Advanced cybersecurity analysis for modern threats*
+
+## 📌 Important Notice
+
+**All files have been successfully migrated to:** [https://github.com/Rohit-Mukherjee/Command_Analyzer_All](https://github.com/Rohit-Mukherjee/Command_Analyzer_All)
+
+**Do not attempt to upload these files again to other repositories. The complete Code_Projects directory has already been uploaded to the above repository.**
