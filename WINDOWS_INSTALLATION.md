@@ -53,29 +53,6 @@ If you get an error saying Python is not found:
 - Make sure Python is installed and added to your PATH
 - Try using `py` command instead of `python` (Windows feature)
 
-### Execution Policy Issues
-If you encounter an error about scripts being disabled on your system:
-```
-File ... cannot be loaded because running scripts is disabled on this system.
-```
-
-This is due to PowerShell's execution policy. You have several options:
-
-1. **Change execution policy** (requires admin rights):
-   ```powershell
-   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-   ```
-
-2. **Run with bypass policy**:
-   ```powershell
-   powershell -ExecutionPolicy Bypass -File .\install_fixed.ps1
-   ```
-
-3. **Run in Command Prompt** using the batch script instead:
-   ```cmd
-   install.bat
-   ```
-
 ### Permission Errors
 - Run Command Prompt or PowerShell as Administrator
 - Make sure you have write permissions to the project directory
@@ -93,34 +70,12 @@ After successful installation, you can run the tools:
 3. To run the rules wizard: `streamlit run rules_wizard_app.py`
 4. To run the dashboard: `streamlit run dashboard.py`
 
-### Simple Usage Command
-For easiest usage, run the start script which provides a menu:
-```
-start_clta.bat
-```
-
-### Virtual Environment Management
-Every time you want to use the tools, you need to activate the virtual environment first:
+Remember to activate the virtual environment before running the tools:
 ```
 clta_env\Scripts\activate.bat
 ```
 
-Then you can run any of the commands mentioned above.
-
-### Simplified Workflow
-1. **Activate virtual environment** (every new command prompt session):
-   ```
-   clta_env\Scripts\activate.bat
-   ```
-
-2. **Run the tool you want**:
-   - For web interface: `streamlit run web_app.py`
-   - For command line analysis: `python log_analyzer.py`
-   - For rule creation: `streamlit run rules_wizard_app.py`
-   - For dashboard: `streamlit run dashboard.py`
-   - For menu interface: `start_clta.bat`
-
-Remember to deactivate the environment when done:
+To deactivate the environment when done:
 ```
 deactivate
 ```
