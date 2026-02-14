@@ -1,438 +1,199 @@
-# Command Line Threat Analyzer
+# Command Line Threat Analyzer (CLTA)
 
-A comprehensive cybersecurity tool for detecting and analyzing suspicious command line activities across Windows, Linux, and macOS platforms.
+## Overview
 
-## 🚀 Features
+The Command Line Threat Analyzer (CLTA) is a comprehensive cybersecurity tool designed for detecting and analyzing suspicious command line activities across Windows, Linux, and macOS platforms. It serves as a command analysis tool that addresses the critical challenge faced by cybersecurity analysts: understanding the complete story of an attack when only individual detection commands are highlighted but the full narrative unfolds across multiple interconnected commands.
 
-### Core Analysis
-- **Multi-Platform Support**: Detects threats across Windows, Linux, and macOS
-- **Hierarchical Rule Engine**: Organized by OS → Category → Rules
-- **Regex-Based Matching**: Flexible pattern matching for command detection
-- **Unicode Safe**: Proper handling of special characters for Excel compatibility
+## Problem Statement
 
-### Enhanced Capabilities
-- **Performance Metrics**: Detailed timing and efficiency measurements
-- **Threat Intelligence Integration**: MITRE ATT&CK framework mappings
-- **Behavioral Analysis**: Anomaly detection and sequence analysis
-- **Visual Dashboard**: Interactive Streamlit-based visualization
-- **Comprehensive Reporting**: Detailed analysis reports with TTP identification
+Modern cyberattacks involve complex command sequences that unfold over time, with attackers executing multiple commands to achieve their objectives. Current security solutions typically flag individual suspicious commands but fail to provide the complete narrative of an attack. Analysts must manually correlate multiple commands to understand the full attack story, which is time-consuming and error-prone.
 
-## 📊 Components
+CLTA solves this problem by automatically correlating related commands across time and context, providing behavioral analysis to identify attack patterns, and visualizing command sequences to reveal attack progression.
 
-### 1. Log Analyzer (`log_analyzer.py`)
-Main analysis engine that processes command line logs against security rules.
+## Key Features
 
-**Key Features:**
-- Performance metrics and benchmarking
-- Threat intelligence enrichment
-- Behavioral analysis integration
-- Excel-safe CSV output
+### Multi-Platform Threat Detection
+- Comprehensive coverage across Windows, Linux, and macOS environments
+- Over 240+ detection rules organized hierarchically by OS, category, and specific techniques
+- Cross-platform rule sets for universal threat detection
 
-### 2. Rules Wizard (`rules_wizard_app.py`)
-Interactive GUI for creating and testing detection rules.
+### Hierarchical Rule Engine
+- Organized by Operating System → Category → Specific Rules
+- Regex-based pattern matching for flexible command detection
+- Unicode-safe processing for international character support
+- Dynamic severity scoring based on threat level
 
-**Key Features:**
-- Visual rule creation interface
-- Pattern generation from examples
-- Dry-run testing against datasets
-- Automatic backup of rules
+### Advanced Behavioral Analysis
+- Anomaly detection algorithms to identify unusual command patterns
+- Sequence analysis to detect multi-stage attack vectors
+- Clustering algorithms to group related malicious activities
+- Temporal correlation to understand attack progression
 
-### 3. Dashboard (`dashboard.py`)
-Interactive visualization dashboard for analysis results.
+### Threat Intelligence Integration
+- MITRE ATT&CK framework mappings for standardized threat categorization
+- Tactic and technique identification with confidence scoring
+- Integration with external threat intelligence feeds
+- Detailed reporting with TTP (Tactics, Techniques, Procedures) identification
 
-**Key Features:**
-- Distribution charts and metrics
-- Filtering and search capabilities
-- Export functionality
-- Detailed results view
+### Interactive Visualization Dashboard
+- Streamlit-based interactive dashboard for analysis results
+- Distribution charts showing threat patterns and frequencies
+- Filtering and search capabilities for focused analysis
+- Export functionality for reporting and further investigation
 
-### 4. Threat Intelligence (`threat_intel.py`)
-MITRE ATT&CK framework integration for enhanced detection.
+### Rule Creation Wizard
+- Interactive GUI for creating and testing detection rules
+- Visual rule creation with pattern generation
+- Dry-run testing capabilities before deployment
+- Real-time validation of rule effectiveness
 
-**Key Features:**
-- Tactic and technique mapping
-- Confidence scoring
-- Reference links to MITRE documentation
+## Installation
 
-### 5. Behavioral Analysis (`behavioral_analyzer.py`)
-Advanced behavioral analysis for anomaly detection.
-
-**Key Features:**
-- Anomaly detection algorithms
-- Sequence analysis for attack chains
-- Feature extraction and clustering
-- Behavioral flagging
-
-### 6. Demo Environment (`demo_environment.py`)
-Comprehensive test scenarios for validation.
-
-**Scenarios:**
-- Ransomware Attack
-- Credential Theft
-- Lateral Movement
-- Persistence Establishment
-- Data Exfiltration
-
-## 🛠️ Installation
-
-### Prerequisites
-- Python 3.8 or higher
-- pip package manager
-
-### Quick Installation (Recommended)
-
-#### On Linux/macOS:
+### Quick Installation (Linux/macOS)
 ```bash
-# Clone the repository
-git clone https://github.com/Rohit-Mukherjee/Command_Analyzer_All
-cd Command_Analyzer_All
-
-# Make the install script executable and run it
-chmod +x install.sh
-./install.sh
+bash quick_install_linux_macos.sh
 ```
 
-#### On Windows:
+### Quick Installation (Windows)
 ```cmd
-# Clone the repository
-git clone https://github.com/Rohit-Mukherjee/Command_Analyzer_All
-cd Command_Analyzer_All
-
-# Run the installation script
-install.bat
+powershell -ExecutionPolicy Bypass -File quick_install_windows.ps1
 ```
-
-**Note for Windows Users:** If the batch script doesn't work, you can also use the PowerShell script:
-```powershell
-# Run the PowerShell installation script
-.\install_fixed.ps1
-```
-
-For more detailed Windows installation instructions, see [WINDOWS_INSTALLATION.md](WINDOWS_INSTALLATION.md).
 
 ### Manual Installation
-
-If you prefer to install manually:
-
+1. Clone the repository:
 ```bash
-# Clone the repository
-git clone https://github.com/Rohit-Mukherjee/Command_Analyzer_All
+git clone https://github.com/Rohit-Mukherjee/Command_Analyzer_All.git
 cd Command_Analyzer_All
+```
 
-# (Optional but recommended) Create a virtual environment
+2. Create a virtual environment:
+```bash
 python -m venv clta_env
-source clta_env/bin/activate  # On Linux/macOS
-# OR
-clta_env\Scripts\activate     # On Windows
+source clta_env/bin/activate  # On Windows: clta_env\\Scripts\\activate
+```
 
-# Upgrade pip
-pip install --upgrade pip
-
-# Install dependencies
+3. Install dependencies:
+```bash
 pip install -r requirements.txt
-
-# Install the package
-pip install -e .
 ```
 
-### Verify Installation
+## Usage
+
+### Web Application Interface (Recommended)
 ```bash
-# Check dependencies
-python simple_check.py
-
-# Test the analyzer
-python log_analyzer.py
+python app.py
 ```
+Then navigate to `http://localhost:8501` in your browser.
 
-### Running the Applications
-
-After installation, you can run:
-
+### Command-Line Analysis
 ```bash
-# Command line analyzer
-python log_analyzer.py
-
-# Web application (recommended)
-streamlit run web_app.py
-
-# Rules wizard
-streamlit run rules_wizard_app.py
-
-# Dashboard
-streamlit run dashboard.py
-
-# Or use the start script
-./start_web_app.sh  # On Linux/macOS
-# OR
-bash start_web_app.sh  # On Windows with Git Bash
+python log_analyzer.py --input logs/commands.log --output results/
 ```
-
-### Docker Installation (Alternative)
-
-For users who prefer containerization:
-
-```bash
-# Clone the repository
-git clone https://github.com/Rohit-Mukherjee/Command_Analyzer_All
-cd Command_Analyzer_All
-
-# Build the Docker image
-docker build -t command-line-threat-analyzer .
-
-# Run the application
-docker run -p 8501:8501 command-line-threat-analyzer
-
-# Or run with access to local files
-docker run -p 8501:8501 -v $(pwd):/app/data command-line-threat-analyzer
-```
-
-Access the application at `http://localhost:8501`
-
-## 📈 Usage
-
-### Web Application (Recommended)
-For the best user experience, run the full web application:
-
-1. **Start the web app:**
-   ```bash
-   streamlit run web_app.py
-   ```
-
-2. **Access the application** at `http://localhost:8501`
-
-3. **Upload your CSV file** with a 'commandline' column
-
-4. **Click 'Analyze'** to process your data
-
-5. **View detailed results** including:
-   - Threat detection with MITRE ATT&CK mappings
-   - Behavioral anomaly detection
-   - Interactive visualizations
-   - Performance metrics
-
-6. **Download the analyzed results** as CSV
-
-### Simple Usage Instructions
-
-After installation, you have one main option:
-
-#### Option 1: Web Application (Only Recommended Option)
-Every time you want to use the tools, you need to:
-
-1. **Activate the virtual environment** (in a new command prompt session):
-   ```
-   clta_env\\Scripts\\activate.bat
-   ```
-
-2. **Run the web application**:
-   ```
-   streamlit run web_app.py
-   ```
-
-3. **Access the application** at `http://localhost:8501` in your browser
-
-When you're done, you can deactivate the environment:
-```
-deactivate
-```
-
-The web application provides the complete user interface for all functionality including analysis, rule creation, and dashboard visualization.
-## Simple Usage Instructions
-
-After installation, you have two main options:
-
-#### Option 1: Menu Interface (Easiest)
-```
-start_clta.bat
-```
-This provides a menu with all available options.
-
-#### Option 2: Direct Usage
-Every time you want to use the tools, you need to:
-
-1. **Activate the virtual environment** (in a new command prompt session):
-   ```
-   clta_env\\Scripts\\activate.bat
-   ```
-
-2. **Run the tool you want**:
-   - For web interface: `streamlit run web_app.py`
-   - For command line analysis: `python log_analyzer.py`
-   - For rule creation: `streamlit run rules_wizard_app.py`
-   - For dashboard: `streamlit run dashboard.py`
-
-When you're done, you can deactivate the environment:
-```
-deactivate
-```
-
-
-### Basic Analysis
-1. Prepare your command line data in CSV format with a `commandline` column
-2. Update `INPUT_CSV_PATH` in `log_analyzer.py`
-3. Run the analyzer: `python log_analyzer.py`
-4. Review results in the generated CSV and XLSX files
 
 ### Interactive Rule Creation
-1. Run the rules wizard: `streamlit run rules_wizard_app.py`
-2. Create new detection rules using the GUI
-3. Test rules against your data
-4. Export updated rules
+```bash
+python rules_wizard_app.py
+```
 
-### Visualization
-1. Run the dashboard: `streamlit run dashboard.py`
-2. Upload your analysis results
-3. Explore visualizations and drill down into details
+### Dashboard Visualization
+```bash
+python dashboard.py
+```
 
-### Web Application (Recommended)
-For the best user experience, run the full web application:
+## Supported Platforms and Rules
 
-1. **Start the web app:**
-   ```bash
-   ./start_web_app.sh
-   ```
-   or
-   ```bash
-   python -m streamlit run web_app.py
-   ```
+### Windows Detection (100+ rules)
+- User and Group Management
+- Scheduled Tasks and Persistence
+- File Download/Upload (PowerShell, CertUtil, BITSAdmin)
+- Network Discovery and Reconnaissance
+- System Information Discovery
+- Windows Registry Modification
+- Service Manipulation
+- Process Execution & Manipulation
+- Firewall and Network Configuration
+- UAC Bypass Techniques
 
-2. **Access the application** at `http://localhost:8501`
+### Linux Detection (80+ rules)
+- User and Group Management
+- Scheduled Tasks/Persistence
+- File Download/Upload
+- Network Discovery
+- System Information Discovery
+- Service Manipulation
+- Firewall and Security Configuration
+- Data Exfiltration/Encoding
+- Credential Access/Cracking
 
-3. **Upload your CSV file** with a 'commandline' column
+### macOS Detection (60+ rules)
+- User and Group Management
+- Scheduled Tasks/Persistence
+- Network Discovery
+- System Information Discovery
+- Launch Services/Service Manipulation
+- Firewall and Security Configuration
+- Credential Access/Privileged Execution
 
-4. **Click 'Analyze'** to process your data
+### Cross-Platform Detection (40+ rules)
+- File Download/Upload
+- Network Discovery
+- Data Exfiltration/Encoding
+- Scripting/Shells
+- Container and Virtualization
+- Cloud and Infrastructure
 
-5. **View detailed results** including:
-   - Threat detection with MITRE ATT&CK mappings
-   - Behavioral anomaly detection
-   - Interactive visualizations
-   - Performance metrics
+## Demo Scenarios
 
-6. **Download the analyzed results** as CSV
+The tool includes comprehensive demo scenarios covering:
+- Ransomware attack simulation
+- Credential theft and privilege escalation
+- Lateral movement techniques
+- Persistence establishment methods
+- Data exfiltration strategies
 
-## 🎯 Detection Capabilities
+Run the demo environment:
+```bash
+python demo_environment.py
+```
 
-### Windows (100+ rules)
-- **User and Group Management**: Account creation/deletion, group membership changes
-- **Scheduled Tasks**: Task creation, modification, and execution
-- **File Download and Upload**: PowerShell, CertUtil, BITSAdmin, curl, wget
-- **Network Discovery**: Traceroute, ipconfig, nbtstat, arp, netsh
-- **System Information Discovery**: Systeminfo, wmic, driverquery, tasklist
-- **Windows Registry Modification**: Run keys, autoruns, policy checks
-- **Service Manipulation**: Service creation, deletion, configuration
-- **Process Execution & Manipulation**: DLL execution, HTA, WSH, process hollowing
-- **Firewall and Network Configuration**: Netsh, port proxy, interface config
-- **Account Policy Inspection**: Net accounts, password policies
-- **Share and Session Enumeration**: Net share, session, use, view
-- **PowerShell Execution Policy / Behavior**: Bypass, encoded commands, IEX
-- **Defender and Security Evasion**: Real-time monitoring, exclusions, service manipulation
-- **Password Dumping / Mimikatz**: Credential dumping tools and techniques
-- **Browser Download Activity**: Chrome, Edge, Firefox command-line usage
-- **Volume Shadow Copy Manipulation**: VSSAdmin, WMIC, WBAdmin, DiskShadow
-- **WSCRIPT / CSCRIPT Suspicious Usage**: Script host abuse
-- **Other Suspicious / Malicious Patterns**: Event log clearing, USN journal deletion
-- **Lateral Movement / Impacket**: PsExec, WMIExec, SMBExec, secretsdump
-- **Memory Injection and Process Hollowing**: DLL injection, mavinject
-- **UAC Bypass Techniques**: FodHelper, ComputerDefaults, EventVWR
+## Architecture
 
-### Linux (80+ rules)
-- **User and Group Management**: Useradd, userdel, usermod, passwd, su
-- **Scheduled Tasks / Persistence**: Cron, at, systemd timers, init scripts
-- **File Download and Upload**: SCP, rsync, netcat, dd, curl, wget
-- **Network Discovery**: IP route, ifconfig, ss, lsof, dig, traceroute, nmap
-- **System Information Discovery**: Uname, lsb_release, ps, id, cat /etc/*
-- **Service Manipulation**: Systemctl, service, update-rc.d, supervisorctl
-- **Firewall and Security Configuration**: Iptables, nftables, ufw, SELinux
-- **Data Exfiltration / Encoding**: Tar, zip, 7z, base64, gpg, openssl
-- **Credential Access / Cracking**: John, hashcat, hydra, medusa, cewl
-- **Scripting / Suspicious Execution**: Pipelined scripts, screen, tmux, nohup
-- **Kernel and Driver Manipulation**: Insmod, rmmod, modprobe, DKMS
-- **Log Manipulation**: Log deletion, truncation, redirection
+### Core Components
 
-### macOS (60+ rules)
-- **User and Group Management**: dscl, sysadminctl, dsmemberutil
-- **Scheduled Tasks / Persistence**: Launchctl, crontab, pmset
-- **Network Discovery**: Ifconfig, scutil, networksetup, lsof
-- **System Information Discovery**: System_profiler, sw_vers, ioreg, csrutil
-- **Launch Services / Service Manipulation**: Launchctl, brew services
-- **Firewall and Security Configuration**: Socketfilterfw, pfctl, spctl, tccutil
-- **Credential Access / Privileged Execution**: Security, osascript, sudo
-- **Scripting / Suspicious Execution**: Curl piped scripts, plutil, defaults
-- **macOS Specific Persistence**: LaunchAgents, LaunchDaemons, Preferences
+#### Log Analyzer (`log_analyzer.py`)
+The main analysis engine processes command line logs against security rules with performance metrics, threat intelligence enrichment, and behavioral analysis integration.
 
-### Cross-Platform (40+ rules)
-- **File Download and Upload**: curl, wget, fetch, aria2c, axel
-- **Network Discovery**: Ping, nslookup, netstat, arp, whoami, id
-- **Data Exfiltration / Encoding**: Base64, tar, zip, gpg, openssl
-- **Scripting / Shells**: Python, Perl, Ruby, Node.js, PHP, Java
-- **Container and Virtualization**: Docker, Kubernetes, Podman, LXC
-- **Cloud and Infrastructure**: AWS CLI, Google Cloud SDK, Azure CLI, Terraform
+#### Rules Wizard (`rules_wizard_app.py`)
+Interactive GUI for creating and testing detection rules with visual rule creation, pattern generation, and dry-run testing capabilities.
 
-## 📊 Enhanced Features
+#### Dashboard (`dashboard.py`)
+Interactive visualization dashboard for analysis results with distribution charts, filtering, and export functionality.
 
-### Advanced Analysis
-- **Configurable Analysis Parameters**: Toggle threat intelligence and behavioral analysis
-- **Dynamic Severity Scoring**: Automatic threat level assignment (Low to Critical)
-- **Timeline Visualization**: Shows threat activity over time
-- **Enhanced Filtering**: Multi-dimensional filtering by OS, Category, Severity, Anomalies
+#### Threat Intelligence (`threat_intel.py`)
+MITRE ATT&CK framework integration providing tactic and technique mapping with confidence scoring.
 
-### User Experience
-- **Search Functionality**: Search within command lines
-- **Multiple Export Formats**: CSV, JSON, and Excel with summary sheets
-- **Color-Coded Severity Indicators**: Visual threat level representation
-- **Real-time Metrics**: Live updates of analysis results
+#### Behavioral Analysis (`behavioral_analyzer.py`)
+Advanced behavioral analysis for anomaly detection using clustering algorithms and sequence analysis.
 
-### Technical Improvements
-- **Robust CSV Parsing**: Handles malformed CSV files gracefully
-- **Case-Insensitive Column Detection**: Works with 'commandline' or 'commandlines' in any case
-- **Memory-Efficient Processing**: Optimized for large files
-- **Error Resilience**: Continues processing even with problematic data
+#### Demo Environment (`demo_environment.py`)
+Comprehensive test scenarios including ransomware attacks, credential theft, lateral movement, persistence establishment, and data exfiltration.
 
-## 🔍 Threat Intelligence Mappings
+## Contributing
 
-The analyzer integrates with MITRE ATT&CK framework including:
-- Tactic identification (Persistence, Execution, Credential Access, etc.)
-- Technique mapping (T1136.001, T1059.001, etc.)
-- Confidence scoring
-- Reference documentation
-
-## 📊 Behavioral Analysis
-
-Advanced behavioral analysis features:
-- Anomaly detection using clustering algorithms
-- Sequence analysis for attack chain identification
-- Feature extraction for command complexity
-- Behavioral flagging for suspicious patterns
-
-## 🧪 Demo Scenarios
-
-The included demo environment provides realistic attack scenarios:
-- **Ransomware Attack**: Full lifecycle simulation
-- **Credential Theft**: Multiple harvesting techniques
-- **Lateral Movement**: Network traversal methods
-- **Persistence Establishment**: Access maintenance
-- **Data Exfiltration**: Information theft techniques
-
-## 📋 Requirements
-
-- Python 3.8+
-- pandas
-- streamlit
-- plotly
-- scikit-learn
-- numpy
-
-## 🤝 Contributing
+We welcome contributions to improve the Command Line Threat Analyzer. Please follow these steps:
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-*Command Line Threat Analyzer - Advanced cybersecurity analysis for modern threats*
+## Acknowledgments
+
+- Thanks to the cybersecurity community for continuous feedback and improvement suggestions
+- MITRE ATT&CK framework for providing standardized threat categorization
+- Open-source community for the various libraries and tools that make this project possible
