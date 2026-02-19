@@ -1,1 +1,56 @@
-QGVjaG8gb2ZmClJFTSBTdGFydCBzY3JpcHQgZm9yIENvbW1hbmQgTGluZSBUaHJlYXQgQW5hbHl6ZXIgb24gV2luZG93cwoKZWNobyDwn5qAIFN0YXJ0aW5nIENvbW1hbmQgTGluZSBUaHJlYXQgQW5hbHl6ZXIuLi4KClJFTSBDaGVjayBpZiB2aXJ0dWFsIGVudmlyb25tZW50IGlzIGFjdGl2ZQppZiAiJVZJUlRVQUxfRU5WJSI9PSIiICgKICAgIGVjaG8g4pqg77iPICBWaXJ0dWFsIGVudmlyb25tZW50IG5vdCBhY3RpdmUuIEF0dGVtcHRpbmcgdG8gYWN0aXZhdGUuLi4KICAgIGlmIGV4aXN0IGNsdGFfZW52XFNjcmlwdHNcYWN0aXZhdGUuYmF0ICgKICAgICAgICBjYWxsIGNsdGFfZW52XFNjcmlwdHNcYWN0aXZhdGUuYmF0CiAgICAgICAgaWYgZXJyb3JsZXZlbCAxICgKICAgICAgICAgICAgZWNobyDinYwgRmFpbGVkIHRvIGFjdGl2YXRlIHZpcnR1YWwgZW52aXJvbm1lbnQuCiAgICAgICAgICAgIGVjaG8gUGxlYXNlIHJ1biBpbnN0YWxsLmJhdCBmaXJzdCB0byBzZXQgdXAgdGhlIGVudmlyb25tZW50LgogICAgICAgICAgICBwYXVzZQogICAgICAgICAgICBleGl0IC9iIDEKICAgICAgICApCiAgICAgICAgZWNobyDinIUgVmlydHVhbCBlbnZpcm9ubWVudCBhY3RpdmF0ZWQKICAgICkgZWxzZSAoCiAgICAgICAgZWNobyDinYwgVmlydHVhbCBlbnZpcm9ubWVudCBub3QgZm91bmQuIFBsZWFzZSBydW4gaW5zdGFsbC5iYXQgZmlyc3QuCiAgICAgICAgcGF1c2UKICAgICAgICBleGl0IC9iIDEKICAgICkKKQoKZWNoby4KZWNobyDwn5OLIEF2YWlsYWJsZSBPcHRpb25zOgplY2hvICAgMS4gUnVuIExvZyBBbmFseXplcgplY2hvICAgMi4gUnVuIFdlYiBBcHAKZWNobyAgIDMuIFJ1biBSdWxlcyBXaXphcmQKZWNobyAgIDQuIFJ1biBEYXNoYm9hcmQKZWNobyAgIDUuIENoZWNrIEluc3RhbGxhdGlvbgplY2hvLgpzZXQgL3AgY2hvaWNlPSJFbnRlciB5b3VyIGNob2ljZSAoMS01KTogIgoKaWYgIiVjaG9pY2UlIj09IjEiICgKICAgIGVjaG8gU3RhcnRpbmcgTG9nIEFuYWx5emVyLi4uCiAgICBweXRob24gbG9nX2FuYWx5emVyLnB5CikgZWxzZSBpZiAiJWNob2ljZSUiPT0iMiIgKAogICAgZWNobyBTdGFydGluZyBXZWIgQXBwLi4uCiAgICBzdHJlYW1saXQgcnVuIHdlYl9hcHAucHkKKSBlbHNlIGlmICIlY2hvaWNlJSI9PSIzIiAoCiAgICBlY2hvIFN0YXJ0aW5nIFJ1bGVzIFdpemFyZC4uLgogICAgc3RyZWFtbGl0IHJ1biBydWxlc193aXphcmRfYXBwLnB5CikgZWxzZSBpZiAiJWNob2ljZSUiPT0iNCIgKAogICAgZWNobyBTdGFydGluZyBEYXNoYm9hcmQuLi4KICAgIHN0cmVhbWxpdCBydW4gZGFzaGJvYXJkLnB5CikgZWxzZSBpZiAiJWNob2ljZSUiPT0iNSIgKAogICAgZWNobyBDaGVja2luZyBJbnN0YWxsYXRpb24uLi4KICAgIHB5dGhvbiBjaGVja19pbnN0YWxsYXRpb24ucHkKKSBlbHNlICgKICAgIGVjaG8gSW52YWxpZCBjaG9pY2UuCikKCmVjaG8uCmVjaG8gUHJlc3MgYW55IGtleSB0byBjb250aW51ZS4uLgpwYXVzZSA+bnVs
+@echo off
+REM Start script for Command Line Threat Analyzer on Windows
+
+echo 🚀 Starting Command Line Threat Analyzer...
+
+REM Check if virtual environment is active
+if "%VIRTUAL_ENV%"=="" (
+    echo ⚠️  Virtual environment not active. Attempting to activate...
+    if exist clta_env\Scripts\activate.bat (
+        call clta_env\Scripts\activate.bat
+        if errorlevel 1 (
+            echo ❌ Failed to activate virtual environment.
+            echo Please run install.bat first to set up the environment.
+            pause
+            exit /b 1
+        )
+        echo ✅ Virtual environment activated
+    ) else (
+        echo ❌ Virtual environment not found. Please run install.bat first.
+        pause
+        exit /b 1
+    )
+)
+
+echo.
+echo 📋 Available Options:
+echo   1. Run Log Analyzer
+echo   2. Run Web App
+echo   3. Run Rules Wizard
+echo   4. Run Dashboard
+echo   5. Check Installation
+echo.
+set /p choice="Enter your choice (1-5): "
+
+if "%choice%"=="1" (
+    echo Starting Log Analyzer...
+    python log_analyzer.py
+) else if "%choice%"=="2" (
+    echo Starting Web App...
+    streamlit run web_app.py
+) else if "%choice%"=="3" (
+    echo Starting Rules Wizard...
+    streamlit run rules_wizard_app.py
+) else if "%choice%"=="4" (
+    echo Starting Dashboard...
+    streamlit run dashboard.py
+) else if "%choice%"=="5" (
+    echo Checking Installation...
+    python check_installation.py
+) else (
+    echo Invalid choice.
+)
+
+echo.
+echo Press any key to continue...
+pause >nul
