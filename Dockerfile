@@ -1,1 +1,36 @@
-IyBVc2UgYW4gb2ZmaWNpYWwgUHl0aG9uIHJ1bnRpbWUgYXMgYSBwYXJlbnQgaW1hZ2UKRlJPTSBweXRob246My4xMC1zbGltCgojIFNldCBlbnZpcm9ubWVudCB2YXJpYWJsZXMKRU5WIFBZVEhPTkRPTlRXUklURUJZVEVDT0RFIDEKRU5WIFBZVEhPTlVOQlVGRkVSRUQgMQoKIyBTZXQgd29yayBkaXJlY3RvcnkKV09SS0RJUiAvYXBwCgojIEluc3RhbGwgc3lzdGVtIGRlcGVuZGVuY2llcwpSVU4gYXB0LWdldCB1cGRhdGUgXAogICAgJiYgYXB0LWdldCBpbnN0YWxsIC15IC0tbm8taW5zdGFsbC1yZWNvbW1lbmRzIFwKICAgICAgICBidWlsZC1lc3NlbnRpYWwgXAogICAgJiYgcm0gLXJmIC92YXIvbGliL2FwdC9saXN0cy8qCgojIENvcHkgcmVxdWlyZW1lbnRzIGZpcnN0IHRvIGxldmVyYWdlIERvY2tlciBjYWNoZQpDT1BZIHJlcXVpcmVtZW50cy50eHQgL2FwcC8KUlVOIHBpcCBpbnN0YWxsIC0tbm8tY2FjaGUtZGlyIC1yIHJlcXVpcmVtZW50cy50eHQKCiMgQ29weSBwcm9qZWN0CkNPUFkgLiAvYXBwLwoKIyBJbnN0YWxsIHRoZSBwYWNrYWdlClJVTiBwaXAgaW5zdGFsbCAtZSAuCgojIENyZWF0ZSBhIG5vbi1yb290IHVzZXIKUlVOIGFkZHVzZXIgLS1kaXNhYmxlZC1wYXNzd29yZCAtLWdlY29zICcnIGFwcHVzZXIKUlVOIGNob3duIC1SIGFwcHVzZXI6YXBwdXNlciAvYXBwClVTRVIgYXBwdXNlcgoKIyBFeHBvc2UgcG9ydCBmb3IgU3RyZWFtbGl0CkVYUE9TRSA4NTAxCgojIERlZmluZSB0aGUgY29tbWFuZCB0byBydW4gdGhlIGFwcGxpY2F0aW9uCkNNRCBbInN0cmVhbWxpdCIsICJydW4iLCAid2ViX2FwcC5weSIsICItLXNlcnZlci5wb3J0IiwgIjg1MDEiLCAiLS1zZXJ2ZXIuYWRkcmVzcyIsICIwLjAuMC4wIl0=
+# Use an official Python runtime as a parent image
+FROM python:3.10-slim
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# Set work directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements first to leverage Docker cache
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy project
+COPY . /app/
+
+# Install the package
+RUN pip install -e .
+
+# Create a non-root user
+RUN adduser --disabled-password --gecos '' appuser
+RUN chown -R appuser:appuser /app
+USER appuser
+
+# Expose port for Streamlit
+EXPOSE 8501
+
+# Define the command to run the application
+CMD ["streamlit", "run", "web_app.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
