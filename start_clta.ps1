@@ -1,1 +1,63 @@
-IyBQb3dlclNoZWxsIHN0YXJ0IHNjcmlwdCBmb3IgQ29tbWFuZCBMaW5lIFRocmVhdCBBbmFseXplciBvbiBXaW5kb3dzCgpXcml0ZS1Ib3N0ICLwn5qAIFN0YXJ0aW5nIENvbW1hbmQgTGluZSBUaHJlYXQgQW5hbHl6ZXIuLi4iIC1Gb3JlZ3JvdW5kQ29sb3IgR3JlZW4KCiMgQ2hlY2sgaWYgdmlydHVhbCBlbnZpcm9ubWVudCBpcyBhY3RpdmUKaWYgKC1ub3QgJGVudjpWSVJUVUFMX0VOVikgewogICAgV3JpdGUtSG9zdCAi4pqg77iPICBWaXJ0dWFsIGVudmlyb25tZW50IG5vdCBhY3RpdmUuIEF0dGVtcHRpbmcgdG8gYWN0aXZhdGUuLi4iIC1Gb3JlZ3JvdW5kQ29sb3IgWWVsbG93CiAgICBpZiAoVGVzdC1QYXRoICJjbHRhX2VudlxTY3JpcHRzXEFjdGl2YXRlLnBzMSIpIHsKICAgICAgICAmICIuXGNsdGFfZW52XFNjcmlwdHNcQWN0aXZhdGUucHMxIgogICAgICAgIGlmICgkTEFTVEVYSVRDT0RFIC1uZSAwKSB7CiAgICAgICAgICAgIFdyaXRlLUhvc3QgIuKdjCBGYWlsZWQgdG8gYWN0aXZhdGUgdmlydHVhbCBlbnZpcm9ubWVudC4iIC1Gb3JlZ3JvdW5kQ29sb3IgUmVkCiAgICAgICAgICAgIFdyaXRlLUhvc3QgIlBsZWFzZSBydW4gaW5zdGFsbC5iYXQgZmlyc3QgdG8gc2V0IHVwIHRoZSBlbnZpcm9ubWVudC4iIC1Gb3JlZ3JvdW5kQ29sb3IgUmVkCiAgICAgICAgICAgIFBhdXNlCiAgICAgICAgICAgIGV4aXQgMQogICAgICAgIH0KICAgICAgICBXcml0ZS1Ib3N0ICLinIUgVmlydHVhbCBlbnZpcm9ubWVudCBhY3RpdmF0ZWQiIC1Gb3JlZ3JvdW5kQ29sb3IgR3JlZW4KICAgIH0gZWxzZSB7CiAgICAgICAgV3JpdGUtSG9zdCAi4p2MIFZpcnR1YWwgZW52aXJvbm1lbnQgbm90IGZvdW5kLiBQbGVhc2UgcnVuIGluc3RhbGwuYmF0IGZpcnN0LiIgLUZvcmVncm91bmRDb2xvciBSZWQKICAgICAgICBQYXVzZQogICAgICAgIGV4aXQgMQogICAgfQp9CgpXcml0ZS1Ib3N0ICIiCldyaXRlLUhvc3QgIvCfk4sgQXZhaWxhYmxlIE9wdGlvbnM6IiAtRm9yZWdyb3VuZENvbG9yIEN5YW4KV3JpdGUtSG9zdCAiICAxLiBSdW4gTG9nIEFuYWx5emVyIiAtRm9yZWdyb3VuZENvbG9yIFdoaXRlCldyaXRlLUhvc3QgIiAgMi4gUnVuIFdlYiBBcHAiIC1Gb3JlZ3JvdW5kQ29sb3IgV2hpdGUKV3JpdGUtSG9zdCAiICAzLiBSdW4gUnVsZXMgV2l6YXJkIiAtRm9yZWdyb3VuZENvbG9yIFdoaXRlCldyaXRlLUhvc3QgIiAgNC4gUnVuIERhc2hib2FyZCIgLUZvcmVncm91bmRDb2xvciBXaGl0ZQpXcml0ZS1Ib3N0ICIgIDUuIENoZWNrIEluc3RhbGxhdGlvbiIgLUZvcmVncm91bmRDb2xvciBXaGl0ZQpXcml0ZS1Ib3N0ICIiCgokY2hvaWNlID0gUmVhZC1Ib3N0ICJFbnRlciB5b3VyIGNob2ljZSAoMS01KSIKCnN3aXRjaCAoJGNob2ljZSkgewogICAgIjEiIHsKICAgICAgICBXcml0ZS1Ib3N0ICJTdGFydGluZyBMb2cgQW5hbHl6ZXIuLi4iIC1Gb3JlZ3JvdW5kQ29sb3IgWWVsbG93CiAgICAgICAgcHl0aG9uIGxvZ19hbmFseXplci5weQogICAgfQogICAgIjIiIHsKICAgICAgICBXcml0ZS1Ib3N0ICJTdGFydGluZyBXZWIgQXBwLi4uIiAtRm9yZWdyb3VuZENvbG9yIFllbGxvdwogICAgICAgIHN0cmVhbWxpdCBydW4gd2ViX2FwcC5weQogICAgfQogICAgIjMiIHsKICAgICAgICBXcml0ZS1Ib3N0ICJTdGFydGluZyBSdWxlcyBXaXphcmQuLi4iIC1Gb3JlZ3JvdW5kQ29sb3IgWWVsbG93CiAgICAgICAgc3RyZWFtbGl0IHJ1biBydWxlc193aXphcmRfYXBwLnB5CiAgICB9CiAgICAiNCIgewogICAgICAgIFdyaXRlLUhvc3QgIlN0YXJ0aW5nIERhc2hib2FyZC4uLiIgLUZvcmVncm91bmRDb2xvciBZZWxsb3cKICAgICAgICBzdHJlYW1saXQgcnVuIGRhc2hib2FyZC5weQogICAgfQogICAgIjUiIHsKICAgICAgICBXcml0ZS1Ib3N0ICJDaGVja2luZyBJbnN0YWxsYXRpb24uLi4iIC1Gb3JlZ3JvdW5kQ29sb3IgWWVsbG93CiAgICAgICAgcHl0aG9uIGNoZWNrX2luc3RhbGxhdGlvbi5weQogICAgfQogICAgZGVmYXVsdCB7CiAgICAgICAgV3JpdGUtSG9zdCAiSW52YWxpZCBjaG9pY2UuIiAtRm9yZWdyb3VuZENvbG9yIFJlZAogICAgfQp9CgpXcml0ZS1Ib3N0ICIiCldyaXRlLUhvc3QgIlByZXNzIGFueSBrZXkgdG8gY29udGludWUuLi4iCiRudWxsID0gJEhvc3QuVUkuUmF3VUkuUmVhZEtleSgiTm9FY2hvLEluY2x1ZGVLZXlEb3duIik=
+# PowerShell start script for Command Line Threat Analyzer on Windows
+
+Write-Host "🚀 Starting Command Line Threat Analyzer..." -ForegroundColor Green
+
+# Check if virtual environment is active
+if (-not $env:VIRTUAL_ENV) {
+    Write-Host "⚠️  Virtual environment not active. Attempting to activate..." -ForegroundColor Yellow
+    if (Test-Path "clta_env\Scripts\Activate.ps1") {
+        & ".\clta_env\Scripts\Activate.ps1"
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Failed to activate virtual environment." -ForegroundColor Red
+            Write-Host "Please run install.bat first to set up the environment." -ForegroundColor Red
+            Pause
+            exit 1
+        }
+        Write-Host "✅ Virtual environment activated" -ForegroundColor Green
+    } else {
+        Write-Host "❌ Virtual environment not found. Please run install.bat first." -ForegroundColor Red
+        Pause
+        exit 1
+    }
+}
+
+Write-Host ""
+Write-Host "📋 Available Options:" -ForegroundColor Cyan
+Write-Host "  1. Run Log Analyzer" -ForegroundColor White
+Write-Host "  2. Run Web App" -ForegroundColor White
+Write-Host "  3. Run Rules Wizard" -ForegroundColor White
+Write-Host "  4. Run Dashboard" -ForegroundColor White
+Write-Host "  5. Check Installation" -ForegroundColor White
+Write-Host ""
+
+$choice = Read-Host "Enter your choice (1-5)"
+
+switch ($choice) {
+    "1" {
+        Write-Host "Starting Log Analyzer..." -ForegroundColor Yellow
+        python log_analyzer.py
+    }
+    "2" {
+        Write-Host "Starting Web App..." -ForegroundColor Yellow
+        streamlit run web_app.py
+    }
+    "3" {
+        Write-Host "Starting Rules Wizard..." -ForegroundColor Yellow
+        streamlit run rules_wizard_app.py
+    }
+    "4" {
+        Write-Host "Starting Dashboard..." -ForegroundColor Yellow
+        streamlit run dashboard.py
+    }
+    "5" {
+        Write-Host "Checking Installation..." -ForegroundColor Yellow
+        python check_installation.py
+    }
+    default {
+        Write-Host "Invalid choice." -ForegroundColor Red
+    }
+}
+
+Write-Host ""
+Write-Host "Press any key to continue..."
+$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
