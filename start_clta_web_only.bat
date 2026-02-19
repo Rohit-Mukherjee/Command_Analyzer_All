@@ -1,1 +1,40 @@
-QGVjaG8gb2ZmClJFTSBTdGFydCBzY3JpcHQgZm9yIENvbW1hbmQgTGluZSBUaHJlYXQgQW5hbHl6ZXIgb24gV2luZG93cwpSRU0gVGhpcyBzY3JpcHQgZGlyZWN0bHkgbGF1bmNoZXMgdGhlIHdlYiBhcHBsaWNhdGlvbgoKZWNobyDwn5qAIFN0YXJ0aW5nIENvbW1hbmQgTGluZSBUaHJlYXQgQW5hbHl6ZXIgV2ViIEFwcGxpY2F0aW9uLi4uCmVjaG8uCgpSRU0gQ2hlY2sgaWYgdmlydHVhbCBlbnZpcm9ubWVudCBpcyBhY3RpdmUKaWYgIiVWSVJUVUFMX0VOViUiPT0iIiAoCiAgICBlY2hvIOKaoO+4jyAgVmlydHVhbCBlbnZpcm9ubWVudCBub3QgYWN0aXZlLiBBdHRlbXB0aW5nIHRvIGFjdGl2YXRlLi4uCiAgICBpZiBleGlzdCBjbHRhX2VudlxTY3JpcHRzXGFjdGl2YXRlLmJhdCAoCiAgICAgICAgY2FsbCBjbHRhX2VudlxTY3JpcHRzXGFjdGl2YXRlLmJhdAogICAgICAgIGlmIGVycm9ybGV2ZWwgMSAoCiAgICAgICAgICAgIGVjaG8g4p2MIEZhaWxlZCB0byBhY3RpdmF0ZSB2aXJ0dWFsIGVudmlyb25tZW50LgogICAgICAgICAgICBlY2hvIFBsZWFzZSBydW4gaW5zdGFsbC5iYXQgZmlyc3QgdG8gc2V0IHVwIHRoZSBlbnZpcm9ubWVudC4KICAgICAgICAgICAgcGF1c2UKICAgICAgICAgICAgZXhpdCAvYiAxCiAgICAgICAgKQogICAgICAgIGVjaG8g4pyFIFZpcnR1YWwgZW52aXJvbm1lbnQgYWN0aXZhdGVkCiAgICApIGVsc2UgKAogICAgICAgIGVjaG8g4p2MIFZpcnR1YWwgZW52aXJvbm1lbnQgbm90IGZvdW5kLiBQbGVhc2UgcnVuIGluc3RhbGwuYmF0IGZpcnN0LgogICAgICAgIHBhdXNlCiAgICAgICAgZXhpdCAvYiAxCiAgICApCikKCmVjaG8uCmVjaG8gU3RhcnRpbmcgdGhlIHdlYiBhcHBsaWNhdGlvbi4uLgplY2hvIEFjY2VzcyB0aGUgYXBwbGljYXRpb24gYXQgaHR0cDovL2xvY2FsaG9zdDo4NTAxIGluIHlvdXIgYnJvd3NlcgplY2hvLgplY2hvIFByZXNzIEN0cmwrQyB0byBzdG9wIHRoZSBhcHBsaWNhdGlvbgplY2hvLgoKUkVNIExhdW5jaCB0aGUgd2ViIGFwcGxpY2F0aW9uIGRpcmVjdGx5CnN0cmVhbWxpdCBydW4gd2ViX2FwcC5weQoKZWNoby4KZWNobyBXZWIgYXBwbGljYXRpb24gaGFzIGJlZW4gY2xvc2VkLgplY2hvLgpwYXVzZQ==
+@echo off
+REM Start script for Command Line Threat Analyzer on Windows
+REM This script directly launches the web application
+
+echo 🚀 Starting Command Line Threat Analyzer Web Application...
+echo.
+
+REM Check if virtual environment is active
+if "%VIRTUAL_ENV%"=="" (
+    echo ⚠️  Virtual environment not active. Attempting to activate...
+    if exist clta_env\Scripts\activate.bat (
+        call clta_env\Scripts\activate.bat
+        if errorlevel 1 (
+            echo ❌ Failed to activate virtual environment.
+            echo Please run install.bat first to set up the environment.
+            pause
+            exit /b 1
+        )
+        echo ✅ Virtual environment activated
+    ) else (
+        echo ❌ Virtual environment not found. Please run install.bat first.
+        pause
+        exit /b 1
+    )
+)
+
+echo.
+echo Starting the web application...
+echo Access the application at http://localhost:8501 in your browser
+echo.
+echo Press Ctrl+C to stop the application
+echo.
+
+REM Launch the web application directly
+streamlit run web_app.py
+
+echo.
+echo Web application has been closed.
+echo.
+pause
