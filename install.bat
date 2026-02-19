@@ -1,1 +1,125 @@
-QGVjaG8gb2ZmClJFTSBGaXhlZCBpbnN0YWxsYXRpb24gc2NyaXB0IGZvciBDb21tYW5kIExpbmUgVGhyZWF0IEFuYWx5emVyIG9uIFdpbmRvd3MKCmVjaG8g8J+agCBJbnN0YWxsaW5nIENvbW1hbmQgTGluZSBUaHJlYXQgQW5hbHl6ZXIuLi4KClJFTSBDaGVjayBpZiBQeXRob24gMy44KyBpcyBpbnN0YWxsZWQgKHRyeSBib3RoIHB5dGhvbiBhbmQgcHkgY29tbWFuZHMpCnB5dGhvbiAtLXZlcnNpb24gPm51bCAyPiYxCmlmIGVycm9ybGV2ZWwgMSAoCiAgICBweSAtLXZlcnNpb24gPm51bCAyPiYxCiAgICBpZiBlcnJvcmxldmVsIDEgKAogICAgICAgIGVjaG8g4p2MIFB5dGhvbiBpcyBub3QgaW5zdGFsbGVkLiBQbGVhc2UgaW5zdGFsbCBQeXRob24gMy44IG9yIGhpZ2hlci4KICAgICAgICBwYXVzZQogICAgICAgIGV4aXQgL2IgMQogICAgKSBlbHNlICgKICAgICAgICBzZXQgUFlUSE9OX0NNRD1weQogICAgKQopIGVsc2UgKAogICAgc2V0IFBZVEhPTl9DTUQ9cHl0aG9uCikKClJFTSBHZXQgUHl0aG9uIHZlcnNpb24KZm9yIC9mICJ0b2tlbnM9MiBkZWxpbXM9ICIgJSVpIGluICgnJVBZVEhPTl9DTUQlIC0tdmVyc2lvbiAyXj5eJjEnKSBkbyBzZXQgUFlUSE9OX1ZFUlNJT049JSVpCmVjaG8g4pyFIFB5dGhvbiAlUFlUSE9OX1ZFUlNJT04lIGRldGVjdGVkCgpSRU0gUGFyc2UgdmVyc2lvbiBudW1iZXJzCmZvciAvZiAidG9rZW5zPTEsMiwzIGRlbGltcz0uIiAlJWEgaW4gKCIlUFlUSE9OX1ZFUlNJT04lIikgZG8gKAogICAgc2V0IE1BSk9SPSUlYgogICAgc2V0IE1JTk9SPSUlYwopCgpSRU0gQ2hlY2sgbWFqb3IgdmVyc2lvbgppZiAlTUFKT1IlIGxzcyAzICgKICAgIGVjaG8g4p2MIFB5dGhvbiB2ZXJzaW9uIGlzIHRvbyBvbGQuIFBsZWFzZSB1cGdyYWRlIHRvIFB5dGhvbiAzLjggb3IgaGlnaGVyLgogICAgcGF1c2UKICAgIGV4aXQgL2IgMQopCgpSRU0gQ2hlY2sgbWlub3IgdmVyc2lvbiBpZiBtYWpvciBpcyAzCmlmICVNQUpPUiUgZXF1IDMgKAogICAgaWYgJU1JTk9SJSBsc3MgOCAoCiAgICAgICAgZWNobyDinYwgUHl0aG9uIHZlcnNpb24gaXMgdG9vIG9sZC4gUGxlYXNlIHVwZ3JhZGUgdG8gUHl0aG9uIDMuOCBvciBoaWdoZXIuCiAgICAgICAgcGF1c2UKICAgICAgICBleGl0IC9iIDEKICAgICkKKQoKUkVNIENoZWNrIGlmIHBpcCBpcyBpbnN0YWxsZWQKJVBZVEhPTl9DTUQlIC1tIHBpcCAtLXZlcnNpb24gPm51bCAyPiYxCmlmIGVycm9ybGV2ZWwgMSAoCiAgICBlY2hvIOKdjCBwaXAgaXMgbm90IGluc3RhbGxlZC4gQXR0ZW1wdGluZyB0byBpbnN0YWxsLi4uCiAgICAlUFlUSE9OX0NNRCUgLW0gZW5zdXJlcGlwIC0tdXBncmFkZQogICAgaWYgZXJyb3JsZXZlbCAxICgKICAgICAgICBlY2hvIOKdjCBGYWlsZWQgdG8gaW5zdGFsbCBwaXAuIFBsZWFzZSBpbnN0YWxsIHBpcCBtYW51YWxseS4KICAgICAgICBwYXVzZQogICAgICAgIGV4aXQgL2IgMQogICAgKQopCgplY2hvIOKchSBwaXAgaXMgYXZhaWxhYmxlCgpSRU0gQ3JlYXRlIHZpcnR1YWwgZW52aXJvbm1lbnQgaWYgbm90IGFscmVhZHkgaW4gb25lCmlmICIlVklSVFVBTF9FTlYlIj09IiIgKAogICAgZWNobyDwn5OmIENyZWF0aW5nIHZpcnR1YWwgZW52aXJvbm1lbnQuLi4KICAgICVQWVRIT05fQ01EJSAtbSB2ZW52IGNsdGFfZW52CiAgICBpZiBlcnJvcmxldmVsIDEgKAogICAgICAgIGVjaG8g4p2MIEZhaWxlZCB0byBjcmVhdGUgdmlydHVhbCBlbnZpcm9ubWVudC4KICAgICAgICBwYXVzZQogICAgICAgIGV4aXQgL2IgMQogICAgKQogICAgY2FsbCBjbHRhX2VudlxTY3JpcHRzXGFjdGl2YXRlLmJhdAogICAgaWYgZXJyb3JsZXZlbCAxICgKICAgICAgICBlY2hvIOKdjCBGYWlsZWQgdG8gYWN0aXZhdGUgdmlydHVhbCBlbnZpcm9ubWVudC4KICAgICAgICBwYXVzZQogICAgICAgIGV4aXQgL2IgMQogICAgKQogICAgZWNobyDinIUgVmlydHVhbCBlbnZpcm9ubWVudCBjcmVhdGVkIGFuZCBhY3RpdmF0ZWQKKSBlbHNlICgKICAgIGVjaG8g4pqg77iPICBBbHJlYWR5IGluIGEgdmlydHVhbCBlbnZpcm9ubWVudAopCgpSRU0gVXBncmFkZSBwaXAKZWNobyDirIbvuI8gIFVwZ3JhZGluZyBwaXAuLi4KcHl0aG9uIC1tIHBpcCBpbnN0YWxsIC0tdXBncmFkZSBwaXAKaWYgZXJyb3JsZXZlbCAxICgKICAgIGVjaG8g4pqg77iPICBXYXJuaW5nOiBGYWlsZWQgdG8gdXBncmFkZSBwaXAsIGNvbnRpbnVpbmcgYW55d2F5Li4uCikKClJFTSBDaGVjayBpZiByZXF1aXJlbWVudHMudHh0IGV4aXN0cyBiZWZvcmUgaW5zdGFsbGluZwppZiBleGlzdCByZXF1aXJlbWVudHMudHh0ICgKICAgIGVjaG8g8J+TpiBJbnN0YWxsaW5nIGRlcGVuZGVuY2llcyBmcm9tIHJlcXVpcmVtZW50cy50eHQuLi4KICAgIHBpcCBpbnN0YWxsIC1yIHJlcXVpcmVtZW50cy50eHQKICAgIGlmIGVycm9ybGV2ZWwgMSAoCiAgICAgICAgZWNobyDimqDvuI8gIFdhcm5pbmc6IEZhaWxlZCB0byBpbnN0YWxsIHNvbWUgZGVwZW5kZW5jaWVzIGZyb20gcmVxdWlyZW1lbnRzLnR4dAogICAgKQopIGVsc2UgKAogICAgZWNobyDimqDvuI8gIHJlcXVpcmVtZW50cy50eHQgbm90IGZvdW5kLCBpbnN0YWxsaW5nIGRlcGVuZGVuY2llcyBmcm9tIHB5cHJvamVjdC50b21sLi4uCikKClJFTSBJbnN0YWxsIHRoZSBwYWNrYWdlIGluIGRldmVsb3BtZW50IG1vZGUKZWNobyDwn5OmIEluc3RhbGxpbmcgQ29tbWFuZCBMaW5lIFRocmVhdCBBbmFseXplciBpbiBkZXZlbG9wbWVudCBtb2RlLi4uCnBpcCBpbnN0YWxsIC1lIC4KaWYgZXJyb3JsZXZlbCAxICgKICAgIGVjaG8g4p2MIEZhaWxlZCB0byBpbnN0YWxsIHRoZSBwYWNrYWdlLgogICAgcGF1c2UKICAgIGV4aXQgL2IgMQopCgplY2hvIOKchSBJbnN0YWxsYXRpb24gY29tcGxldGVkIHN1Y2Nlc3NmdWxseSEKCmVjaG8uCmVjaG8g8J+TiyBVc2FnZSBJbnN0cnVjdGlvbnM6CmVjaG8gICAxLiBUbyBydW4gdGhlIGFuYWx5emVyOiBweXRob24gbG9nX2FuYWx5emVyLnB5CmVjaG8gICAyLiBUbyBydW4gdGhlIHdlYiBhcHA6IHN0cmVhbWxpdCBydW4gd2ViX2FwcC5weQplY2hvICAgMy4gVG8gcnVuIHRoZSBydWxlcyB3aXphcmQ6IHN0cmVhbWxpdCBydW4gcnVsZXNfd2l6YXJkX2FwcC5weQplY2hvICAgNC4gVG8gcnVuIHRoZSBkYXNoYm9hcmQ6IHN0cmVhbWxpdCBydW4gZGFzaGJvYXJkLnB5CmVjaG8uCmVjaG8g8J+SoSBUaXA6IEFjdGl2YXRlIHRoZSB2aXJ0dWFsIGVudmlyb25tZW50IGJlZm9yZSBydW5uaW5nIHRoZSB0b29sczoKaWYgIiVWSVJUVUFMX0VOViUiPT0iIiAoCiAgICBlY2hvICAgY2x0YV9lbnZcU2NyaXB0c1xhY3RpdmF0ZS5iYXQKKQplY2hvLgplY2hvIPCflJIgUmVtZW1iZXIgdG8gZGVhY3RpdmF0ZSB0aGUgZW52aXJvbm1lbnQgd2hlbiBkb25lOgplY2hvICAgZGVhY3RpdmF0ZQplY2hvLgpwYXVzZQ==
+@echo off
+REM Fixed installation script for Command Line Threat Analyzer on Windows
+
+echo 🚀 Installing Command Line Threat Analyzer...
+
+REM Check if Python 3.8+ is installed (try both python and py commands)
+python --version >nul 2>&1
+if errorlevel 1 (
+    py --version >nul 2>&1
+    if errorlevel 1 (
+        echo ❌ Python is not installed. Please install Python 3.8 or higher.
+        pause
+        exit /b 1
+    ) else (
+        set PYTHON_CMD=py
+    )
+) else (
+    set PYTHON_CMD=python
+)
+
+REM Get Python version
+for /f "tokens=2 delims= " %%i in ('%PYTHON_CMD% --version 2^>^&1') do set PYTHON_VERSION=%%i
+echo ✅ Python %PYTHON_VERSION% detected
+
+REM Parse version numbers
+for /f "tokens=1,2,3 delims=." %%a in ("%PYTHON_VERSION%") do (
+    set MAJOR=%%b
+    set MINOR=%%c
+)
+
+REM Check major version
+if %MAJOR% lss 3 (
+    echo ❌ Python version is too old. Please upgrade to Python 3.8 or higher.
+    pause
+    exit /b 1
+)
+
+REM Check minor version if major is 3
+if %MAJOR% equ 3 (
+    if %MINOR% lss 8 (
+        echo ❌ Python version is too old. Please upgrade to Python 3.8 or higher.
+        pause
+        exit /b 1
+    )
+)
+
+REM Check if pip is installed
+%PYTHON_CMD% -m pip --version >nul 2>&1
+if errorlevel 1 (
+    echo ❌ pip is not installed. Attempting to install...
+    %PYTHON_CMD% -m ensurepip --upgrade
+    if errorlevel 1 (
+        echo ❌ Failed to install pip. Please install pip manually.
+        pause
+        exit /b 1
+    )
+)
+
+echo ✅ pip is available
+
+REM Create virtual environment if not already in one
+if "%VIRTUAL_ENV%"=="" (
+    echo 📦 Creating virtual environment...
+    %PYTHON_CMD% -m venv clta_env
+    if errorlevel 1 (
+        echo ❌ Failed to create virtual environment.
+        pause
+        exit /b 1
+    )
+    call clta_env\Scripts\activate.bat
+    if errorlevel 1 (
+        echo ❌ Failed to activate virtual environment.
+        pause
+        exit /b 1
+    )
+    echo ✅ Virtual environment created and activated
+) else (
+    echo ⚠️  Already in a virtual environment
+)
+
+REM Upgrade pip
+echo ⬆️  Upgrading pip...
+python -m pip install --upgrade pip
+if errorlevel 1 (
+    echo ⚠️  Warning: Failed to upgrade pip, continuing anyway...
+)
+
+REM Check if requirements.txt exists before installing
+if exist requirements.txt (
+    echo 📦 Installing dependencies from requirements.txt...
+    pip install -r requirements.txt
+    if errorlevel 1 (
+        echo ⚠️  Warning: Failed to install some dependencies from requirements.txt
+    )
+) else (
+    echo ⚠️  requirements.txt not found, installing dependencies from pyproject.toml...
+)
+
+REM Install the package in development mode
+echo 📦 Installing Command Line Threat Analyzer in development mode...
+pip install -e .
+if errorlevel 1 (
+    echo ❌ Failed to install the package.
+    pause
+    exit /b 1
+)
+
+echo ✅ Installation completed successfully!
+
+echo.
+echo 📋 Usage Instructions:
+echo   1. To run the analyzer: python log_analyzer.py
+echo   2. To run the web app: streamlit run web_app.py
+echo   3. To run the rules wizard: streamlit run rules_wizard_app.py
+echo   4. To run the dashboard: streamlit run dashboard.py
+echo.
+echo 💡 Tip: Activate the virtual environment before running the tools:
+if "%VIRTUAL_ENV%"=="" (
+    echo   clta_env\Scripts\activate.bat
+)
+echo.
+echo 🔒 Remember to deactivate the environment when done:
+echo   deactivate
+echo.
+pause
