@@ -126,22 +126,28 @@ with st.sidebar:
 
 # File uploader
 uploaded_file = st.file_uploader(
-    "Choose a CSV file with command line data", 
-    type=['csv'],
+    "Choose a file with command line data (CSV or Excel)",
+    type=['csv', 'xlsx', 'xls'],
     accept_multiple_files=False,
     key=f"uploader_{st.session_state.upload_key}"
 )
 
 if uploaded_file is not None:
-    # Read the uploaded CSV with error handling
+    # Read the uploaded file with error handling
     try:
-        # Read the CSV with flexible settings to handle problematic files
-        df = pd.read_csv(uploaded_file, 
-                         on_bad_lines='skip',  # Skip problematic lines
-                         quoting=1,  # QUOTE_ALL
-                         sep=',',  # Explicitly set separator
-                         encoding='utf-8',
-                         low_memory=False)  # Handle large files better
+        # Determine file type and read accordingly
+        file_name = uploaded_file.name.lower()
+        if file_name.endswith('.csv'):
+            # Read CSV with flexible settings to handle problematic files
+            df = pd.read_csv(uploaded_file,
+                             on_bad_lines='skip',  # Skip problematic lines
+                             quoting=1,  # QUOTE_ALL
+                             sep=',',  # Explicitly set separator
+                             encoding='utf-8',
+                             low_memory=False)  # Handle large files better
+        elif file_name.endswith('.xlsx') or file_name.endswith('.xls'):
+            # Read Excel file
+            df = pd.read_excel(uploaded_file)
         
         # Normalize column names to lowercase for comparison
         df.columns = df.columns.str.lower()
@@ -155,7 +161,7 @@ if uploaded_file is not None:
         
         if command_col is None:
             st.error("❌ The uploaded file must contain a 'commandline' or 'commandlines' column")
-            st.info("Please ensure your CSV has a column named 'commandline' or 'commandlines' (case-insensitive)")
+            st.info("Please ensure your file has a column named 'commandline' or 'commandlines' (case-insensitive)")
         else:
             st.success(f"✅ Successfully loaded {len(df)} command entries from '{command_col}' column")
             
@@ -274,14 +280,21 @@ if st.session_state.analysis_complete and st.session_state.results_df is not Non
         # Category distribution
         if 'Category' in df.columns:
             category_counts = df['Category'].value_counts()
-            fig_cat = px.bar(
-                x=category_counts.values, 
-                y=category_counts.index,
-                orientation='h',
+            fig_cat = go.Figure(data=[
+                go.Bar(
+                    y=category_counts.index.tolist(),
+                    x=category_counts.values.tolist(),
+                    orientation='h',
+                    marker_color='rgb(55, 83, 109)'
+                )
+            ])
+            fig_cat.update_layout(
+                height=500,
                 title="Threat Categories Distribution",
-                labels={'x': 'Count', 'y': 'Category'}
+                xaxis_title="Count",
+                yaxis_title="Category",
+                showlegend=False
             )
-            fig_cat.update_layout(height=500)
             st.plotly_chart(fig_cat, use_container_width=True)
     
     with dist_col2:
@@ -317,14 +330,21 @@ if st.session_state.analysis_complete and st.session_state.results_df is not Non
     st.subheader("🔥 Top Threats Identified")
     if 'Description' in df.columns:
         top_threats = df['Description'].value_counts().head(10)
-        fig_threats = px.bar(
-            x=top_threats.values, 
-            y=top_threats.index,
-            orientation='h',
+        fig_threats = go.Figure(data=[
+            go.Bar(
+                y=top_threats.index.tolist(),
+                x=top_threats.values.tolist(),
+                orientation='h',
+                marker_color='rgb(26, 118, 255)'
+            )
+        ])
+        fig_threats.update_layout(
+            height=500,
             title="Top 10 Threat Types",
-            labels={'x': 'Count', 'y': 'Threat Type'}
+            xaxis_title="Count",
+            yaxis_title="Threat Type",
+            showlegend=False
         )
-        fig_threats.update_layout(height=500)
         st.plotly_chart(fig_threats, use_container_width=True)
     
     # Timeline visualization
