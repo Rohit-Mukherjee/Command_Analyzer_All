@@ -1,1 +1,39 @@
-IyBQb3dlclNoZWxsIHN0YXJ0IHNjcmlwdCBmb3IgQ29tbWFuZCBMaW5lIFRocmVhdCBBbmFseXplciBvbiBXaW5kb3dzCiMgVGhpcyBzY3JpcHQgZGlyZWN0bHkgbGF1bmNoZXMgdGhlIHdlYiBhcHBsaWNhdGlvbgoKV3JpdGUtSG9zdCAi8J+agCBTdGFydGluZyBDb21tYW5kIExpbmUgVGhyZWF0IEFuYWx5emVyIFdlYiBBcHBsaWNhdGlvbi4uLiIgLUZvcmVncm91bmRDb2xvciBHcmVlbgoKIyBDaGVjayBpZiB2aXJ0dWFsIGVudmlyb25tZW50IGlzIGFjdGl2ZQppZiAoLW5vdCAkZW52OlZJUlRVQUxfRU5WKSB7CiAgICBXcml0ZS1Ib3N0ICLimqDvuI8gIFZpcnR1YWwgZW52aXJvbm1lbnQgbm90IGFjdGl2ZS4gQXR0ZW1wdGluZyB0byBhY3RpdmF0ZS4uLiIgLUZvcmVncm91bmRDb2xvciBZZWxsb3cKICAgIGlmIChUZXN0LVBhdGggImNsdGFfZW52XFNjcmlwdHNcQWN0aXZhdGUucHMxIikgewogICAgICAgICYgIi5cY2x0YV9lbnZcU2NyaXB0c1xBY3RpdmF0ZS5wczEiCiAgICAgICAgaWYgKCRMQVNURVhJVENPREUgLW5lIDApIHsKICAgICAgICAgICAgV3JpdGUtSG9zdCAi4p2MIEZhaWxlZCB0byBhY3RpdmF0ZSB2aXJ0dWFsIGVudmlyb25tZW50LiIgLUZvcmVncm91bmRDb2xvciBSZWQKICAgICAgICAgICAgV3JpdGUtSG9zdCAiUGxlYXNlIHJ1biBpbnN0YWxsLmJhdCBmaXJzdCB0byBzZXQgdXAgdGhlIGVudmlyb25tZW50LiIgLUZvcmVncm91bmRDb2xvciBSZWQKICAgICAgICAgICAgUGF1c2UKICAgICAgICAgICAgZXhpdCAxCiAgICAgICAgfQogICAgICAgIFdyaXRlLUhvc3QgIuKchSBWaXJ0dWFsIGVudmlyb25tZW50IGFjdGl2YXRlZCIgLUZvcmVncm91bmRDb2xvciBHcmVlbgogICAgfSBlbHNlIHsKICAgICAgICBXcml0ZS1Ib3N0ICLinYwgVmlydHVhbCBlbnZpcm9ubWVudCBub3QgZm91bmQuIFBsZWFzZSBydW4gaW5zdGFsbC5iYXQgZmlyc3QuIiAtRm9yZWdyb3VuZENvbG9yIFJlZAogICAgICAgIFBhdXNlCiAgICAgICAgZXhpdCAxCiAgICB9Cn0KCldyaXRlLUhvc3QgIiIKV3JpdGUtSG9zdCAiU3RhcnRpbmcgdGhlIHdlYiBhcHBsaWNhdGlvbi4uLiIgLUZvcmVncm91bmRDb2xvciBZZWxsb3cKV3JpdGUtSG9zdCAiQWNjZXNzIHRoZSBhcHBsaWNhdGlvbiBhdCBodHRwOi8vbG9jYWxob3N0Ojg1MDEgaW4geW91ciBicm93c2VyIiAtRm9yZWdyb3VuZENvbG9yIFllbGxvdwpXcml0ZS1Ib3N0ICIiCldyaXRlLUhvc3QgIlByZXNzIEN0cmwrQyB0byBzdG9wIHRoZSBhcHBsaWNhdGlvbiIgLUZvcmVncm91bmRDb2xvciBZZWxsb3cKV3JpdGUtSG9zdCAiIgoKIyBMYXVuY2ggdGhlIHdlYiBhcHBsaWNhdGlvbiBkaXJlY3RseQomIHN0cmVhbWxpdCBydW4gd2ViX2FwcC5weQoKV3JpdGUtSG9zdCAiIgpXcml0ZS1Ib3N0ICJXZWIgYXBwbGljYXRpb24gaGFzIGJlZW4gY2xvc2VkLiIgLUZvcmVncm91bmRDb2xvciBZZWxsb3cKV3JpdGUtSG9zdCAiIgoKUGF1c2U=
+# PowerShell start script for Command Line Threat Analyzer on Windows
+# This script directly launches the web application
+
+Write-Host "🚀 Starting Command Line Threat Analyzer Web Application..." -ForegroundColor Green
+
+# Check if virtual environment is active
+if (-not $env:VIRTUAL_ENV) {
+    Write-Host "⚠️  Virtual environment not active. Attempting to activate..." -ForegroundColor Yellow
+    if (Test-Path "clta_env\Scripts\Activate.ps1") {
+        & ".\clta_env\Scripts\Activate.ps1"
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "❌ Failed to activate virtual environment." -ForegroundColor Red
+            Write-Host "Please run install.bat first to set up the environment." -ForegroundColor Red
+            Pause
+            exit 1
+        }
+        Write-Host "✅ Virtual environment activated" -ForegroundColor Green
+    } else {
+        Write-Host "❌ Virtual environment not found. Please run install.bat first." -ForegroundColor Red
+        Pause
+        exit 1
+    }
+}
+
+Write-Host ""
+Write-Host "Starting the web application..." -ForegroundColor Yellow
+Write-Host "Access the application at http://localhost:8501 in your browser" -ForegroundColor Yellow
+Write-Host ""
+Write-Host "Press Ctrl+C to stop the application" -ForegroundColor Yellow
+Write-Host ""
+
+# Launch the web application directly
+& streamlit run web_app.py
+
+Write-Host ""
+Write-Host "Web application has been closed." -ForegroundColor Yellow
+Write-Host ""
+
+Pause
