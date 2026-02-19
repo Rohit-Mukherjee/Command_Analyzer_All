@@ -1,1 +1,117 @@
-IyBQb3dlclNoZWxsIGluc3RhbGxhdGlvbiBzY3JpcHQgZm9yIENvbW1hbmQgTGluZSBUaHJlYXQgQW5hbHl6ZXIgb24gV2luZG93cwoKV3JpdGUtSG9zdCAi8J+agCBJbnN0YWxsaW5nIENvbW1hbmQgTGluZSBUaHJlYXQgQW5hbHl6ZXIuLi4iIC1Gb3JlZ3JvdW5kQ29sb3IgR3JlZW4KCiMgQ2hlY2sgaWYgUHl0aG9uIDMuOCsgaXMgaW5zdGFsbGVkCiRweXRob25DbWQgPSAiIgppZiAoR2V0LUNvbW1hbmQgcHl0aG9uIC1FcnJvckFjdGlvbiBTaWxlbnRseUNvbnRpbnVlKSB7CiAgICAkcHl0aG9uVmVyc2lvbiA9ICQocHl0aG9uIC0tdmVyc2lvbiAyPiYxKQogICAgJHB5dGhvbkNtZCA9ICJweXRob24iCn0gZWxzZWlmIChHZXQtQ29tbWFuZCBweSAtRXJyb3JBY3Rpb24gU2lsZW50bHlDb250aW51ZSkgewogICAgJHB5dGhvblZlcnNpb24gPSAkKHB5IC0tdmVyc2lvbiAyPiYxKQogICAgJHB5dGhvbkNtZCA9ICJweSIKfSBlbHNlIHsKICAgIFdyaXRlLUhvc3QgIuKdjCBQeXRob24gaXMgbm90IGluc3RhbGxlZC4gUGxlYXNlIGluc3RhbGwgUHl0aG9uIDMuOCBvciBoaWdoZXIuIiAtRm9yZWdyb3VuZENvbG9yIFJlZAogICAgUGF1c2UKICAgIGV4aXQgMQp9CgojIEV4dHJhY3QgdmVyc2lvbiBudW1iZXJzCiR2ZXJzaW9uTWF0Y2ggPSBbcmVnZXhdOjpNYXRjaCgkcHl0aG9uVmVyc2lvbiwgJ1xkK1wuKFxkKylcLihcZCspJykKJG1ham9yID0gW2ludF0kdmVyc2lvbk1hdGNoLkdyb3Vwc1sxXS5WYWx1ZQokbWlub3IgPSBbaW50XSR2ZXJzaW9uTWF0Y2guR3JvdXBzWzJdLlZhbHVlCgpXcml0ZS1Ib3N0ICLinIUgUHl0aG9uICQoJHB5dGhvblZlcnNpb24uU3BsaXQoJyAnKVsxXSkgZGV0ZWN0ZWQiIC1Gb3JlZ3JvdW5kQ29sb3IgR3JlZW4KCiMgQ2hlY2sgdmVyc2lvbgppZiAoJG1ham9yIC1sdCAzIC1vciAoJG1ham9yIC1lcSAzIC1hbmQgJG1pbm9yIC1sdCA4KSkgewogICAgV3JpdGUtSG9zdCAi4p2MIFB5dGhvbiB2ZXJzaW9uIGlzIHRvbyBvbGQuIFBsZWFzZSB1cGdyYWRlIHRvIFB5dGhvbiAzLjggb3IgaGlnaGVyLiIgLUZvcmVncm91bmRDb2xvciBSZWQKICAgIFBhdXNlCiAgICBleGl0IDEKfQoKIyBDaGVjayBpZiBwaXAgaXMgaW5zdGFsbGVkCnRyeSB7CiAgICAmICRweXRob25DbWQgLW0gcGlwIC0tdmVyc2lvbiA+ICRudWxsCiAgICBXcml0ZS1Ib3N0ICLinIUgcGlwIGlzIGF2YWlsYWJsZSIgLUZvcmVncm91bmRDb2xvciBHcmVlbgp9IGNhdGNoIHsKICAgIFdyaXRlLUhvc3QgIuKdjCBwaXAgaXMgbm90IGluc3RhbGxlZC4gQXR0ZW1wdGluZyB0byBpbnN0YWxsLi4uIiAtRm9yZWdyb3VuZENvbG9yIFllbGxvdwogICAgJiAkcHl0aG9uQ21kIC1tIGVuc3VyZXBpcCAtLXVwZ3JhZGUKICAgIGlmICgkTEFTVEVYSVRDT0RFIC1uZSAwKSB7CiAgICAgICAgV3JpdGUtSG9zdCAi4p2MIEZhaWxlZCB0byBpbnN0YWxsIHBpcC4gUGxlYXNlIGluc3RhbGwgcGlwIG1hbnVhbGx5LiIgLUZvcmVncm91bmRDb2xvciBSZWQKICAgICAgICBQYXVzZQogICAgICAgIGV4aXQgMQogICAgfQogICAgV3JpdGUtSG9zdCAi4pyFIHBpcCBpbnN0YWxsZWQgc3VjY2Vzc2Z1bGx5IiAtRm9yZWdyb3VuZENvbG9yIEdyZWVuCn0KCiMgQ3JlYXRlIHZpcnR1YWwgZW52aXJvbm1lbnQgaWYgbm90IGFscmVhZHkgaW4gb25lCmlmICgtbm90ICRlbnY6VklSVFVBTF9FTlYpIHsKICAgIFdyaXRlLUhvc3QgIvCfk6YgQ3JlYXRpbmcgdmlydHVhbCBlbnZpcm9ubWVudC4uLiIgLUZvcmVncm91bmRDb2xvciBZZWxsb3cKICAgICYgJHB5dGhvbkNtZCAtbSB2ZW52IGNsdGFfZW52CiAgICBpZiAoJExBU1RFWElUQ09ERSAtbmUgMCkgewogICAgICAgIFdyaXRlLUhvc3QgIuKdjCBGYWlsZWQgdG8gY3JlYXRlIHZpcnR1YWwgZW52aXJvbm1lbnQuIiAtRm9yZWdyb3VuZENvbG9yIFJlZAogICAgICAgIFBhdXNlCiAgICAgICAgZXhpdCAxCiAgICB9CiAgICAKICAgICMgQWN0aXZhdGUgdmlydHVhbCBlbnZpcm9ubWVudAogICAgJiAiLlxjbHRhX2VudlxTY3JpcHRzXEFjdGl2YXRlLnBzMSIKICAgIGlmICgkTEFTVEVYSVRDT0RFIC1uZSAwKSB7CiAgICAgICAgV3JpdGUtSG9zdCAi4p2MIEZhaWxlZCB0byBhY3RpdmF0ZSB2aXJ0dWFsIGVudmlyb25tZW50LiIgLUZvcmVncm91bmRDb2xvciBSZWQKICAgICAgICBQYXVzZQogICAgICAgIGV4aXQgMQogICAgfQogICAgCiAgICBXcml0ZS1Ib3N0ICLinIUgVmlydHVhbCBlbnZpcm9ubWVudCBjcmVhdGVkIGFuZCBhY3RpdmF0ZWQiIC1Gb3JlZ3JvdW5kQ29sb3IgR3JlZW4KfSBlbHNlIHsKICAgIFdyaXRlLUhvc3QgIuKaoO+4jyAgQWxyZWFkeSBpbiBhIHZpcnR1YWwgZW52aXJvbm1lbnQiIC1Gb3JlZ3JvdW5kQ29sb3IgWWVsbG93Cn0KCiMgVXBncmFkZSBwaXAKV3JpdGUtSG9zdCAi4qyG77iPICBVcGdyYWRpbmcgcGlwLi4uIiAtRm9yZWdyb3VuZENvbG9yIFllbGxvdwomIHB5dGhvbiAtbSBwaXAgaW5zdGFsbCAtLXVwZ3JhZGUgcGlwCmlmICgkTEFTVEVYSVRDT0RFIC1uZSAwKSB7CiAgICBXcml0ZS1Ib3N0ICLimqDvuI8gIFdhcm5pbmc6IEZhaWxlZCB0byB1cGdyYWRlIHBpcCwgY29udGludWluZyBhbnl3YXkuLi4iIC1Gb3JlZ3JvdW5kQ29sb3IgWWVsbG93Cn0KCiMgQ2hlY2sgaWYgcmVxdWlyZW1lbnRzLnR4dCBleGlzdHMgYmVmb3JlIGluc3RhbGxpbmcKaWYgKFRlc3QtUGF0aCAicmVxdWlyZW1lbnRzLnR4dCIpIHsKICAgIFdyaXRlLUhvc3QgIvCfk6YgSW5zdGFsbGluZyBkZXBlbmRlbmNpZXMgZnJvbSByZXF1aXJlbWVudHMudHh0Li4uIiAtRm9yZWdyb3VuZENvbG9yIFllbGxvdwogICAgJiBwaXAgaW5zdGFsbCAtciByZXF1aXJlbWVudHMudHh0CiAgICBpZiAoJExBU1RFWElUQ09ERSAtbmUgMCkgewogICAgICAgIFdyaXRlLUhvc3QgIuKaoO+4jyAgV2FybmluZzogRmFpbGVkIHRvIGluc3RhbGwgc29tZSBkZXBlbmRlbmNpZXMgZnJvbSByZXF1aXJlbWVudHMudHh0IiAtRm9yZWdyb3VuZENvbG9yIFllbGxvdwogICAgfQp9IGVsc2UgewogICAgV3JpdGUtSG9zdCAi4pqg77iPICByZXF1aXJlbWVudHMudHh0IG5vdCBmb3VuZCwgaW5zdGFsbGluZyBkZXBlbmRlbmNpZXMgZnJvbSBweXByb2plY3QudG9tbC4uLiIgLUZvcmVncm91bmRDb2xvciBZZWxsb3cKfQoKIyBJbnN0YWxsIHRoZSBwYWNrYWdlIGluIGRldmVsb3BtZW50IG1vZGUKV3JpdGUtSG9zdCAi8J+TpiBJbnN0YWxsaW5nIENvbW1hbmQgTGluZSBUaHJlYXQgQW5hbHl6ZXIgaW4gZGV2ZWxvcG1lbnQgbW9kZS4uLiIgLUZvcmVncm91bmRDb2xvciBZZWxsb3cKJiBwaXAgaW5zdGFsbCAtZSAuCmlmICgkTEFTVEVYSVRDT0RFIC1uZSAwKSB7CiAgICBXcml0ZS1Ib3N0ICLinYwgRmFpbGVkIHRvIGluc3RhbGwgdGhlIHBhY2thZ2UuIiAtRm9yZWdyb3VuZENvbG9yIFJlZAogICAgUGF1c2UKICAgIGV4aXQgMQp9CgpXcml0ZS1Ib3N0ICLinIUgSW5zdGFsbGF0aW9uIGNvbXBsZXRlZCBzdWNjZXNzZnVsbHkhIiAtRm9yZWdyb3VuZENvbG9yIEdyZWVuCgpXcml0ZS1Ib3N0ICIiCldyaXRlLUhvc3QgIvCfk4sgVXNhZ2UgSW5zdHJ1Y3Rpb25zOiIgLUZvcmVncm91bmRDb2xvciBDeWFuCldyaXRlLUhvc3QgIiAgMS4gVG8gcnVuIHRoZSBhbmFseXplcjogcHl0aG9uIGxvZ19hbmFseXplci5weSIKV3JpdGUtSG9zdCAiICAyLiBUbyBydW4gdGhlIHdlYiBhcHA6IHN0cmVhbWxpdCBydW4gd2ViX2FwcC5weSIKV3JpdGUtSG9zdCAiICAzLiBUbyBydW4gdGhlIHJ1bGVzIHdpemFyZDogc3RyZWFtbGl0IHJ1biBydWxlc193aXphcmRfYXBwLnB5IgpXcml0ZS1Ib3N0ICIgIDQuIFRvIHJ1biB0aGUgZGFzaGJvYXJkOiBzdHJlYW1saXQgcnVuIGRhc2hib2FyZC5weSIKV3JpdGUtSG9zdCAiIgpXcml0ZS1Ib3N0ICLwn5KhIFRpcDogQWN0aXZhdGUgdGhlIHZpcnR1YWwgZW52aXJvbm1lbnQgYmVmb3JlIHJ1bm5pbmcgdGhlIHRvb2xzOiIgLUZvcmVncm91bmRDb2xvciBDeWFuCmlmICgtbm90ICRlbnY6VklSVFVBTF9FTlYpIHsKICAgIFdyaXRlLUhvc3QgIiAgY2x0YV9lbnZcU2NyaXB0c1xBY3RpdmF0ZS5wczEgICMgSW4gUG93ZXJTaGVsbCIKICAgIFdyaXRlLUhvc3QgIiAgY2x0YV9lbnZcU2NyaXB0c1xhY3RpdmF0ZS5iYXQgICMgSW4gQ29tbWFuZCBQcm9tcHQiCn0KV3JpdGUtSG9zdCAiIgpXcml0ZS1Ib3N0ICLwn5SSIFJlbWVtYmVyIHRvIGRlYWN0aXZhdGUgdGhlIGVudmlyb25tZW50IHdoZW4gZG9uZToiIC1Gb3JlZ3JvdW5kQ29sb3IgQ3lhbgpXcml0ZS1Ib3N0ICIgIGRlYWN0aXZhdGUiCldyaXRlLUhvc3QgIiIKClBhdXNl
+# PowerShell installation script for Command Line Threat Analyzer on Windows
+
+Write-Host "🚀 Installing Command Line Threat Analyzer..." -ForegroundColor Green
+
+# Check if Python 3.8+ is installed
+$pythonCmd = ""
+if (Get-Command python -ErrorAction SilentlyContinue) {
+    $pythonVersion = $(python --version 2>&1)
+    $pythonCmd = "python"
+} elseif (Get-Command py -ErrorAction SilentlyContinue) {
+    $pythonVersion = $(py --version 2>&1)
+    $pythonCmd = "py"
+} else {
+    Write-Host "❌ Python is not installed. Please install Python 3.8 or higher." -ForegroundColor Red
+    Pause
+    exit 1
+}
+
+# Extract version numbers
+$versionMatch = [regex]::Match($pythonVersion, '\d+\.(\d+)\.(\d+)')
+$major = [int]$versionMatch.Groups[1].Value
+$minor = [int]$versionMatch.Groups[2].Value
+
+Write-Host "✅ Python $($pythonVersion.Split(' ')[1]) detected" -ForegroundColor Green
+
+# Check version
+if ($major -lt 3 -or ($major -eq 3 -and $minor -lt 8)) {
+    Write-Host "❌ Python version is too old. Please upgrade to Python 3.8 or higher." -ForegroundColor Red
+    Pause
+    exit 1
+}
+
+# Check if pip is installed
+try {
+    & $pythonCmd -m pip --version > $null
+    Write-Host "✅ pip is available" -ForegroundColor Green
+} catch {
+    Write-Host "❌ pip is not installed. Attempting to install..." -ForegroundColor Yellow
+    & $pythonCmd -m ensurepip --upgrade
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "❌ Failed to install pip. Please install pip manually." -ForegroundColor Red
+        Pause
+        exit 1
+    }
+    Write-Host "✅ pip installed successfully" -ForegroundColor Green
+}
+
+# Create virtual environment if not already in one
+if (-not $env:VIRTUAL_ENV) {
+    Write-Host "📦 Creating virtual environment..." -ForegroundColor Yellow
+    & $pythonCmd -m venv clta_env
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "❌ Failed to create virtual environment." -ForegroundColor Red
+        Pause
+        exit 1
+    }
+    
+    # Activate virtual environment
+    & ".\clta_env\Scripts\Activate.ps1"
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "❌ Failed to activate virtual environment." -ForegroundColor Red
+        Pause
+        exit 1
+    }
+    
+    Write-Host "✅ Virtual environment created and activated" -ForegroundColor Green
+} else {
+    Write-Host "⚠️  Already in a virtual environment" -ForegroundColor Yellow
+}
+
+# Upgrade pip
+Write-Host "⬆️  Upgrading pip..." -ForegroundColor Yellow
+& python -m pip install --upgrade pip
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "⚠️  Warning: Failed to upgrade pip, continuing anyway..." -ForegroundColor Yellow
+}
+
+# Check if requirements.txt exists before installing
+if (Test-Path "requirements.txt") {
+    Write-Host "📦 Installing dependencies from requirements.txt..." -ForegroundColor Yellow
+    & pip install -r requirements.txt
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "⚠️  Warning: Failed to install some dependencies from requirements.txt" -ForegroundColor Yellow
+    }
+} else {
+    Write-Host "⚠️  requirements.txt not found, installing dependencies from pyproject.toml..." -ForegroundColor Yellow
+}
+
+# Install the package in development mode
+Write-Host "📦 Installing Command Line Threat Analyzer in development mode..." -ForegroundColor Yellow
+& pip install -e .
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "❌ Failed to install the package." -ForegroundColor Red
+    Pause
+    exit 1
+}
+
+Write-Host "✅ Installation completed successfully!" -ForegroundColor Green
+
+Write-Host ""
+Write-Host "📋 Usage Instructions:" -ForegroundColor Cyan
+Write-Host "  1. To run the analyzer: python log_analyzer.py"
+Write-Host "  2. To run the web app: streamlit run web_app.py"
+Write-Host "  3. To run the rules wizard: streamlit run rules_wizard_app.py"
+Write-Host "  4. To run the dashboard: streamlit run dashboard.py"
+Write-Host ""
+Write-Host "💡 Tip: Activate the virtual environment before running the tools:" -ForegroundColor Cyan
+if (-not $env:VIRTUAL_ENV) {
+    Write-Host "  clta_env\Scripts\Activate.ps1  # In PowerShell"
+    Write-Host "  clta_env\Scripts\activate.bat  # In Command Prompt"
+}
+Write-Host ""
+Write-Host "🔒 Remember to deactivate the environment when done:" -ForegroundColor Cyan
+Write-Host "  deactivate"
+Write-Host ""
+
+Pause
