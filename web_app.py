@@ -151,23 +151,31 @@ if uploaded_file is not None:
         
         # Normalize column names to lowercase for comparison
         df.columns = df.columns.str.lower()
+
+        # Check if any command line column exists (case-insensitive)
+        # Support multiple column name variations
+        COMMAND_LINE_COLUMNS = [
+            'commandline', 'commandlines',
+            'process_commandline', 'process_commandlines',
+            'process.commandline', 'process.commandlines'
+        ]
         
-        # Check if 'commandline' or 'commandlines' column exists (case-insensitive)
         command_col = None
         for col in df.columns:
-            if col in ['commandline', 'commandlines']:
+            if col in COMMAND_LINE_COLUMNS:
                 command_col = col
                 break
-        
+
         if command_col is None:
-            st.error("❌ The uploaded file must contain a 'commandline' or 'commandlines' column")
-            st.info("Please ensure your file has a column named 'commandline' or 'commandlines' (case-insensitive)")
+            st.error("❌ The uploaded file must contain a command line column")
+            st.info(f"Expected one of: {COMMAND_LINE_COLUMNS}")
         else:
+            # Rename to 'commandline' for consistent processing
+            if command_col != 'commandline':
+                df.rename(columns={command_col: 'commandline'}, inplace=True)
+                st.info(f"Using column '{command_col}' as command line source")
             st.success(f"✅ Successfully loaded {len(df)} command entries from '{command_col}' column")
-            
-            # Rename the command column to 'commandline' for consistency
-            df.rename(columns={command_col: 'commandline'}, inplace=True)
-            
+
             # Show sample of data
             st.subheader("📄 Data Preview")
             st.dataframe(df.head())

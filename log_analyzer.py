@@ -398,10 +398,30 @@ def main():
 
     # Normalize column names and verify schema
     df.columns = df.columns.str.lower().map(sanitize_text)
-    if "commandline" not in df.columns:
-        print("ERROR: Could not find a 'Commandline' column in the input file.")
+    
+    # Support multiple command line column name variations
+    COMMAND_LINE_COLUMNS = [
+        'commandline', 'commandlines',
+        'process_commandline', 'process_commandlines',
+        'process.commandline', 'process.commandlines'
+    ]
+    
+    command_col = None
+    for col in COMMAND_LINE_COLUMNS:
+        if col in df.columns:
+            command_col = col
+            break
+    
+    if command_col is None:
+        print("ERROR: Could not find a command line column in the input file.")
+        print(f"Expected one of: {COMMAND_LINE_COLUMNS}")
         print(f"Columns present: {list(df.columns)}")
         sys.exit(1)
+    
+    # Rename to 'commandline' for consistent processing
+    if command_col != 'commandline':
+        df.rename(columns={command_col: 'commandline'}, inplace=True)
+        print(f"Using column '{command_col}' as command line source (renamed to 'commandline')")
 
     # Clean inputs to avoid Unicode artifacts and ensure consistent matching
     df["commandline"] = df["commandline"].astype(str).map(sanitize_text)
