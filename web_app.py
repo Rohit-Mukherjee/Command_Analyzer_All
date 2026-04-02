@@ -9,6 +9,13 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import base64
 
+# Check for openpyxl dependency (required for Excel file support)
+try:
+    import openpyxl
+    OPENPYXL_AVAILABLE = True
+except ImportError:
+    OPENPYXL_AVAILABLE = False
+
 # Import our modules
 from log_analyzer import make_analyzer, load_rules, sanitize_text
 from threat_intel import ThreatIntelligenceProvider
@@ -85,6 +92,13 @@ st.subheader("Upload your command line logs for comprehensive threat analysis")
 
 # Sidebar with instructions and settings
 with st.sidebar:
+    # Warning if openpyxl is not available
+    if not OPENPYXL_AVAILABLE:
+        st.warning(
+            "⚠️ **openpyxl not installed** - Excel file support is disabled.\n\n"
+            "Install with: `pip install openpyxl`"
+        )
+
     st.header("📋 Instructions")
     st.markdown("""
     1. Upload a CSV file with a 'commandline' column
@@ -125,11 +139,19 @@ with st.sidebar:
     """)
 
 # File uploader
+if OPENPYXL_AVAILABLE:
+    uploaded_file_types = ['csv', 'xlsx', 'xls']
+    uploader_help = "Upload a CSV file with a 'commandline' column"
+else:
+    uploaded_file_types = ['csv']
+    uploader_help = "Upload a CSV file with a 'commandline' column (Excel support requires openpyxl)"
+
 uploaded_file = st.file_uploader(
     "Choose a file with command line data (CSV or Excel)",
-    type=['csv', 'xlsx', 'xls'],
+    type=uploaded_file_types,
     accept_multiple_files=False,
-    key=f"uploader_{st.session_state.upload_key}"
+    key=f"uploader_{st.session_state.upload_key}",
+    help=uploader_help
 )
 
 if uploaded_file is not None:
@@ -147,6 +169,9 @@ if uploaded_file is not None:
                              low_memory=False)  # Handle large files better
         elif file_name.endswith('.xlsx') or file_name.endswith('.xls'):
             # Read Excel file
+            if not OPENPYXL_AVAILABLE:
+                st.error("❌ Excel file support requires the 'openpyxl' library. Install with: `pip install openpyxl`")
+                st.stop()
             df = pd.read_excel(uploaded_file)
         
         # Normalize column names to lowercase for comparison

@@ -49,56 +49,96 @@ CLTA solves this problem by automatically correlating related commands across ti
 
 ## Installation
 
-### Quick Installation (Linux/macOS)
-```bash
-bash quick_install_linux_macos.sh
-```
+### Prerequisites
+- **Python 3.8 or higher** (required)
+- **pip** (Python package manager)
 
-### Quick Installation (Windows)
-```cmd
-powershell -ExecutionPolicy Bypass -File quick_install_windows.ps1
-```
+### Quick Installation
 
-### Manual Installation
-1. Clone the repository:
-```bash
+#### Windows
+```powershell
+# Option 1: Using the PowerShell script
+powershell -ExecutionPolicy Bypass -File install_fixed_with_execution_policy.ps1
+
+# Option 2: Manual installation
 git clone https://github.com/Rohit-Mukherjee/Command_Analyzer_All.git
 cd Command_Analyzer_All
-```
-
-2. Create a virtual environment:
-```bash
 python -m venv clta_env
-source clta_env/bin/activate  # On Windows: clta_env\\Scripts\\activate
+clta_env\Scripts\activate
+pip install -r requirements.txt
+pip install -e .
 ```
 
-3. Install dependencies:
+#### Linux/macOS
 ```bash
+# Option 1: Using the install script
+bash install.sh
+
+# Option 2: Manual installation
+git clone https://github.com/Rohit-Mukherjee/Command_Analyzer_All.git
+cd Command_Analyzer_All
+python3 -m venv clta_env
+source clta_env/bin/activate
 pip install -r requirements.txt
+pip install -e .
 ```
+
+### Required Dependencies
+The following Python packages are automatically installed:
+- `pandas` - Data manipulation and Excel file support
+- `openpyxl` - Excel file reading/writing (required for .xlsx support)
+- `streamlit` - Web application framework
+- `plotly` - Interactive visualizations
+- `numpy` - Numerical computing
+- `scikit-learn` - Machine learning for behavioral analysis
+- `requests` - HTTP requests for threat intelligence
+- `PyGithub` - GitHub integration
 
 ## Usage
 
-### Web Application Interface (Recommended)
+### 1. Web Application Interface (Recommended)
 ```bash
-python app.py
+streamlit run web_app.py
 ```
 Then navigate to `http://localhost:8501` in your browser.
 
-### Command-Line Analysis
+**Features:**
+- Upload CSV or Excel files with command line data
+- Interactive threat analysis with visualizations
+- MITRE ATT&CK framework integration
+- Behavioral anomaly detection
+- Export results to CSV/JSON/Excel
+
+### 2. Command-Line Analysis
 ```bash
-python log_analyzer.py --input logs/commands.log --output results/
+# Analyze a CSV file with command lines
+python log_analyzer.py
 ```
 
-### Interactive Rule Creation
-```bash
-python rules_wizard_app.py
+**Configuration:** Edit `log_analyzer.py` to set input/output paths:
+```python
+INPUT_CSV_PATH = r"demo_ransomware_attack.csv"  # Your input file
+OUTPUT_CSV_PATH = r"Commands_analyzed.csv"     # Results CSV
+OUTPUT_XLSX_PATH = r"Commands_analyzed.xlsx"   # Results Excel (optional)
 ```
 
-### Dashboard Visualization
+### 3. Interactive Rule Creation
 ```bash
-python dashboard.py
+streamlit run rules_wizard_app.py
 ```
+Create and test detection rules without editing JSON manually.
+
+### 4. Dashboard Visualization
+```bash
+streamlit run dashboard.py
+```
+View analysis results with interactive charts and filters.
+
+### 5. Run Demo Scenarios
+```bash
+python demo_environment.py
+```
+Generates sample attack scenario data for testing.
 
 ## Supported Platforms and Rules
 
@@ -151,9 +191,62 @@ The tool includes comprehensive demo scenarios covering:
 - Persistence establishment methods
 - Data exfiltration strategies
 
-Run the demo environment:
+### Run Demo Environment
 ```bash
 python demo_environment.py
+```
+This generates sample CSV files with attack scenario data for testing.
+
+### Quick Start with Demo Data
+1. Generate demo data: `python demo_environment.py`
+2. Run the web app: `streamlit run web_app.py`
+3. Upload one of the generated demo CSV files (e.g., `demo_ransomware_attack.csv`)
+4. View the analysis results with interactive visualizations
+
+## Troubleshooting
+
+### Excel File Support Issues
+**Problem:** Cannot read/write `.xlsx` files  
+**Solution:** Ensure `openpyxl` is installed:
+```bash
+pip install openpyxl
+```
+
+### Streamlit App Won't Start
+**Problem:** `streamlit: command not found`  
+**Solution:**
+```bash
+# Make sure you're in the virtual environment
+# On Windows:
+clta_env\Scripts\activate
+# On Linux/macOS:
+source clta_env/bin/activate
+
+# Then run:
+streamlit run web_app.py
+```
+
+### Module Import Errors
+**Problem:** `ModuleNotFoundError: No module named '...'`  
+**Solution:** Install all dependencies:
+```bash
+pip install -r requirements.txt
+pip install -e .
+```
+
+### Python Version Too Old
+**Problem:** Installation fails due to Python version  
+**Solution:** Upgrade to Python 3.8 or higher from [python.org](https://www.python.org/downloads/)
+
+### PowerShell Execution Policy Error (Windows)
+**Problem:** Cannot run PowerShell scripts  
+**Solution:** Run PowerShell as Administrator and execute:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+Or use the bypass option:
+```powershell
+powershell -ExecutionPolicy Bypass -File install_fixed_with_execution_policy.ps1
 ```
 
 ## Architecture
